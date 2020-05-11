@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/java/lib/annotations-13.0.jar"/>
+	<classpathentry kind="lib" path="/java/lib/bson-3.2.2.jar"/>
+	<classpathentry kind="lib" path="/java/lib/jsoup-1.12.1.jar"/>
+	<classpathentry kind="lib" path="/java/lib/kotlin-stdlib-1.3.70.jar"/>
+	<classpathentry kind="lib" path="/java/lib/kotlin-stdlib-common-1.3.70.jar"/>
+	<classpathentry kind="lib" path="/java/lib/mongodb-driver-3.12.0.jar"/>
+	<classpathentry kind="lib" path="/java/lib/okhttp-4.0.0-alpha02.jar"/>
+	<classpathentry kind="lib" path="/java/lib/okio-2.0.0.jar"/>
+	<classpathentry kind="lib" path="/java/lib/postgresql-9.3-1101.jdbc4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ECO-MART/Downloads/selenium-server-standalone-3.141.59.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
