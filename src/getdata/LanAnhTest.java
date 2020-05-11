@@ -35,7 +35,7 @@ public class LanAnhTest {
 		WebElement table = this.getElement();
 		FileWriter out = null;
 		try {
-			out = new FileWriter(new File("D:/datatable.txt"));
+			out = new FileWriter(new File("C:/Users/ECO-MART/eclipse-workspace/opp_group_19/data/datatable.txt"));
 
 			List<WebElement> rows_table = table.findElements(By.tagName("tr"));
 			int rows_count = rows_table.size();
