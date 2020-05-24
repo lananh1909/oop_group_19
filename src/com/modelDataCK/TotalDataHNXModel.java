@@ -2,7 +2,7 @@ package com.modelDataCK;
 
 public class TotalDataHNXModel extends GenericTotalModel {
     private double exchangeMass;  // khối lượng giao dịch
-    private double exchangePercent;  // phần trăm giao dịch
+    private double exchangeValue;  // phần trăm giao dịch
 
     public double getExchangeMass() {
         return exchangeMass;
@@ -12,11 +12,11 @@ public class TotalDataHNXModel extends GenericTotalModel {
         this.exchangeMass = exchangeMass;
     }
 
-    public double getExchangePercent() {
-        return exchangePercent;
+    public double getExchangeValue() {
+        return exchangeValue;
     }
 
-    public void setExchangePercent(double exchangePercent) {
-        this.exchangePercent = exchangePercent;
+    public void setExchangeValue(double exchangePercent) {
+        this.exchangeValue = exchangeValue;
     }
 }

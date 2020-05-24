@@ -2,7 +2,7 @@ package com.mapper;
 
 import com.modelDataCK.StockModel;
 
-public class GernericMapper {
+public class GenericMapper {
 
     public StockModel getStockModel(String line) {
         StockModel stock = new StockModel();
