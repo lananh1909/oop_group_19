@@ -1,4 +1,4 @@
-package com.service;
+package com.dao;
 
 import com.modelDataCK.StockModel;
 

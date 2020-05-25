@@ -1,11 +1,11 @@
-package com.service_impl;
+package com.dao_impl;
 
 import com.mapper.IStockMapper;
 import com.mapper.StockMapper;
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
 import com.modelDataCK.TotalDataModel;
-import com.service.IGetDataDAO;
+import com.dao.IGetDataDAO;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

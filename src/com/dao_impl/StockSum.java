@@ -1,10 +1,10 @@
-package com.service_impl;
+package com.dao_impl;
 
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
 import com.modelDataCK.TotalDataModel;
-import com.service.IGetDataDAO;
-import com.service.IStockSum;
+import com.dao.IGetDataDAO;
+import com.dao.IStockSum;
 
 import java.util.ArrayList;
 import java.util.List;
