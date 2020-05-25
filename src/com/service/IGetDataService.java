@@ -7,7 +7,7 @@ import java.io.File;
 import java.util.List;
 
 public interface IGetDataService {
-    List<StockModel> getDataToList(File file);
+    List<StockModel> getDataToList(String file);
 //    TotalDataModel getDataToObject();
     String [] getDataToArray(String line);
 }
