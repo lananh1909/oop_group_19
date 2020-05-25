@@ -5,16 +5,15 @@ import com.mapper.StockMapper;
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
 import com.modelDataCK.TotalDataModel;
-import com.service.IGetDataService;
+import com.service.IGetDataDAO;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetDataService implements IGetDataService {
+public class GetDataDAO implements IGetDataDAO {
 
     private BufferedReader bf;
     private TotalDataModel dataModel;
