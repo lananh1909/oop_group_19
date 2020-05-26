@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="file:///java/lib/annotations-13.0.jar" />
+    <libelement value="file:///java/lib/bson-3.2.2.jar" />
+    <libelement value="file:///java/lib/jsoup-1.12.1.jar" />
+    <libelement value="file:///java/lib/kotlin-stdlib-1.3.70.jar" />
+    <libelement value="file:///java/lib/kotlin-stdlib-common-1.3.70.jar" />
+    <libelement value="file:///java/lib/mongodb-driver-3.12.0.jar" />
+    <libelement value="file:///java/lib/okhttp-4.0.0-alpha02.jar" />
+    <libelement value="file:///java/lib/okio-2.0.0.jar" />
+    <libelement value="file:///java/lib/postgresql-9.3-1101.jdbc4.jar" />
+    <libelement value="file://C:/Users/ECO-MART/Downloads/selenium-server-standalone-3.141.59.jar" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    </content>
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="JavaSE-11" jdkType="JavaSDK" />
+    <orderEntry type="module-library">
+      <library name="annotations-13.0.jar">
+        <CLASSES>
+          <root url="file:///java/lib/annotations-13.0.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="bson-3.2.2.jar">
+        <CLASSES>
+          <root url="file:///java/lib/bson-3.2.2.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jsoup-1.12.1.jar">
+        <CLASSES>
+          <root url="file:///java/lib/jsoup-1.12.1.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="kotlin-stdlib-1.3.70.jar">
+        <CLASSES>
+          <root url="file:///java/lib/kotlin-stdlib-1.3.70.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="kotlin-stdlib-common-1.3.70.jar">
+        <CLASSES>
+          <root url="file:///java/lib/kotlin-stdlib-common-1.3.70.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="mongodb-driver-3.12.0.jar">
+        <CLASSES>
+          <root url="file:///java/lib/mongodb-driver-3.12.0.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="okhttp-4.0.0-alpha02.jar">
+        <CLASSES>
+          <root url="file:///java/lib/okhttp-4.0.0-alpha02.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="okio-2.0.0.jar">
+        <CLASSES>
+          <root url="file:///java/lib/okio-2.0.0.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="postgresql-9.3-1101.jdbc4.jar">
+        <CLASSES>
+          <root url="file:///java/lib/postgresql-9.3-1101.jdbc4.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="selenium-server-standalone-3.141.59.jar">
+        <CLASSES>
+          <root url="file://C:/Users/ECO-MART/Downloads/selenium-server-standalone-3.141.59.jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="selenium-server-standalone-3.141.59" level="project" />
+  </component>
+</module>
