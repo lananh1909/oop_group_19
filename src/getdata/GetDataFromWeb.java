@@ -128,22 +128,23 @@ public class GetDataFromWeb {
 				List <WebElement> columns_row = rows_table.get(i).findElements(By.tagName("td"));
 				int columns_count = columns_row.size();
 				String name = columns_row.get(0).findElement(By.tagName("div")).findElement(By.tagName("span")).getText();
-				
+//				String companyName = columns_row.get(0).getAttribute("en").replace(" ", "-");
 				out.write(name + "\t");
-				
-//				for (int j = 1; j < columns_count; j++) {
-//					if(j==10 || j==16 || j==17) continue;
-//					String cell_text = columns_row.get(j).getText().replace(",", "");
-//					if(cell_text.equals("")) cell_text = "0";
-//					out.write(cell_text + "\t");
-//				}
+//				out.write(companyName + "\t");
 				
 				for (int j = 1; j < columns_count; j++) {
-					if(j==11 || j==17 || j==18 || j==4 || j==25) continue;
-					String cell_text = columns_row.get(j).getText().replace(",","");
+					if(j==10 || j==16 || j==17) continue;
+					String cell_text = columns_row.get(j).getText().replace(",", "");
 					if(cell_text.equals("")) cell_text = "0";
 					out.write(cell_text + "\t");
 				}
+				
+//				for (int j = 1; j < columns_count; j++) {
+//					if(j==11 || j==17 || j==18 || j==4 || j==25) continue;
+//					String cell_text = columns_row.get(j).getText().replace(",","");
+//					if(cell_text.equals("")) cell_text = "0";
+//					out.write(cell_text + "\t");
+//				}
 				out.write("\n");
 			}
 		} catch (Exception e) {
@@ -155,28 +156,28 @@ public class GetDataFromWeb {
 	
 	public static void main (String [] args) {
 		try {
-	//		GetDataFromWeb app = new GetDataFromWeb("VN30","data/22052020/VN30-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HOSE","data/22052020/HOSE-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VN100","data/22052020/VN100-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNX50","data/22052020/VNX50-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNALL","data/22052020/VNALL-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNMID","data/22052020/VNMID-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNSML","data/22052020/VNSML-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNSI","data/22052020/VNSI-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNX","data/22052020/HNX-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNX30","data/22052020/HNX30-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXCON","data/22052020/HNXCON-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXFIN","data/22052020/HNXFIN-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXLCAP","data/22052020/HNXLCAP-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXMSCAP","data/22052020/HNXMSCAP-2205.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXMAN","data/22052020/HNXMAN-2205.txt");
-			GetDataFromWeb app = new GetDataFromWeb("UPCOM","data/22052020/UPCOM-2205.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VN30","data/26052020/VN30-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HOSE","data/26052020/HOSE-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VN100","data/26052020/VN100-2605.txt");
+			GetDataFromWeb app = new GetDataFromWeb("VNX50","data/26052020/VNX50-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNALL","data/26052020/VNALL-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNMID","data/26052020/VNMID-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNSML","data/26052020/VNSML-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNSI","data/26052020/VNSI-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNX","data/26052020/HNX-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNX30","data/26052020/HNX30-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXCON","data/26052020/HNXCON-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXFIN","data/26052020/HNXFIN-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXLCAP","data/26052020/HNXLCAP-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXMSCAP","data/26052020/HNXMSCAP-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXMAN","data/26052020/HNXMAN-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("UPCOM","data/26052020/UPCOM-2605.txt");
 		
 			app.getElement();
 			app.getIndex();
-//			app.getIndexDetail();
+			app.getIndexDetail();
 //			app.getIndexDetail1();
-			app.getIndexDetail2();
+//			app.getIndexDetail2();
 			app.getData();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

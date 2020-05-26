@@ -1,10 +1,9 @@
 package com.modelDataCK;
 
-import java.io.File;
 import java.io.Serializable;
 
 public class StockModel implements Serializable {
-
+	private String date;
     private String stockCode;
     private double ceiling;
     private double floor;
@@ -32,8 +31,16 @@ public class StockModel implements Serializable {
     private double buyForeign;
     private double sellForeign;
     private double RoomNN;
+  
+    public String getDate() {
+		return date;
+	}
 
-    public double getRoomNN() {
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public double getRoomNN() {
         return RoomNN;
     }
 
@@ -49,7 +56,7 @@ public class StockModel implements Serializable {
         this.stockCode = stockCode;
     }
 
-    public double getCeiling() {
+	public double getCeiling() {
         return ceiling;
     }
 

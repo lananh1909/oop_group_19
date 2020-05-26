@@ -18,6 +18,7 @@ public class GetDataDAO implements IGetDataDAO {
     private BufferedReader bf;
     private TotalDataModel dataModel;
     private TotalDataHNXModel dataHNXModel;
+    private List<StockModel> stockList;
 
     public TotalDataHNXModel getDataHNXModel() {
         return dataHNXModel;
@@ -37,14 +38,17 @@ public class GetDataDAO implements IGetDataDAO {
 
     @Override
     public List<StockModel> getDataToList(String file) {
-        List<StockModel> stockList = new ArrayList<>();
+    	int start = file.indexOf("-") + 1;
+    	int end = file.indexOf(".");
+    	String date = file.substring(start, end);
+        stockList = new ArrayList<>();
         String line;
         IStockMapper stockMapper = null;
 
         try {
             bf = new BufferedReader(new FileReader(file));
-            dataModel = new TotalDataModel();
-            dataHNXModel = new TotalDataHNXModel();
+            dataModel = new TotalDataModel(date);
+            dataHNXModel = new TotalDataHNXModel(date);
             int count = 0;
 
             if(file.contains("HNX")) {
@@ -67,7 +71,7 @@ public class GetDataDAO implements IGetDataDAO {
                     }
                     if(count > 3){
                         stockMapper = new StockMapper();
-                        stockList.add(stockMapper.mapper(line));
+                        stockList.add(stockMapper.mapper(line, date));
                     }
                     count++;
                 }
@@ -106,7 +110,7 @@ public class GetDataDAO implements IGetDataDAO {
                     }
                     if(count > 5){
                         stockMapper = new StockMapper();
-                        stockList.add(stockMapper.mapper(line));
+                        stockList.add(stockMapper.mapper(line, date));
                     }
                     count ++;
                 }

@@ -3,10 +3,11 @@ package com.mapper;
 import com.modelDataCK.StockModel;
 
 public class GenericMapper {
-
-    public StockModel getStockModel(String line) {
+	
+    public StockModel getStockModel(String line, String date) {
         StockModel stock = new StockModel();
         String [] data = line.split("\\t");
+        stock.setDate(date);
         stock.setStockCode(data[0]);
         stock.setCeiling(Double.parseDouble(data[1]));
         stock.setFloor(Double.parseDouble(data[2]));

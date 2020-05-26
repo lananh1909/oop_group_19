@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class Stock implements Initializable {
+public class ControllerFX implements Initializable {
     @FXML private TextField date;
 
     @FXML private TextField content;

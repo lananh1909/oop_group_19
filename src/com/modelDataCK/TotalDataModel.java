@@ -1,10 +1,6 @@
 package com.modelDataCK;
 
-public class TotalDataModel {
-    private String nameExchange;
-    private double index;
-    private double increaseAndDecrease;
-    private double percentIncreaseAndDecrease;
+public class TotalDataModel extends GenericTotalModel{
     private double index1;
     private double increAndDecre1;
     private double percentIncreAndDecre1;
@@ -17,37 +13,9 @@ public class TotalDataModel {
     private double increAndDecre3;
     private double percentIncreAndDecre3;
     private double data3;
-
-    public String getNameExchange() {
-        return nameExchange;
-    }
-
-    public void setNameExchange(String nameExchange) {
-        this.nameExchange = nameExchange;
-    }
-
-    public double getIndex() {
-        return index;
-    }
-
-    public void setIndex(double index) {
-        this.index = index;
-    }
-
-    public double getIncreaseAndDecrease() {
-        return increaseAndDecrease;
-    }
-
-    public void setIncreaseAndDecrease(double increaseAndDecrease) {
-        this.increaseAndDecrease = increaseAndDecrease;
-    }
-
-    public double getPercentIncreaseAndDecrease() {
-        return percentIncreaseAndDecrease;
-    }
-
-    public void setPercentIncreaseAndDecrease(double percentIncreaseAndDecrease) {
-        this.percentIncreaseAndDecrease = percentIncreaseAndDecrease;
+    
+    public TotalDataModel (String date) {
+    	super(date);
     }
 
     public double getIndex1() {

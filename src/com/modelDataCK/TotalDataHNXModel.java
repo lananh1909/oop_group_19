@@ -4,6 +4,10 @@ public class TotalDataHNXModel extends GenericTotalModel {
     private double exchangeMass;  // khối lượng giao dịch
     private double exchangeValue;  // phần trăm giao dịch
 
+    public TotalDataHNXModel (String date) {
+    	super(date);
+    }
+    
     public double getExchangeMass() {
         return exchangeMass;
     }

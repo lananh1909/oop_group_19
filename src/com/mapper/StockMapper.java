@@ -5,8 +5,8 @@ import com.modelDataCK.StockModel;
 
 public class StockMapper extends GenericMapper implements IStockMapper {
     @Override
-    public StockModel mapper(String line) {
-        return getStockModel(line);
+    public StockModel mapper(String line, String date) {
+        return getStockModel(line, date);
     }
 
 }

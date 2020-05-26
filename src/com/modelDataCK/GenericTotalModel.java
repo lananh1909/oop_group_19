@@ -1,13 +1,25 @@
 package com.modelDataCK;
 
 public class GenericTotalModel {
+	private String date;
     private String nameExchange;
     private double index;
     private double increaseAndDecrease;
     private double percentIncreaseAndDecrease;
 
+    public GenericTotalModel (String date) {
+    	this.date = date;
+    }
+    
+    public String getDate() {
+		return date;
+	}
 
-    public String getNameExchange() {
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getNameExchange() {
         return nameExchange;
     }
 

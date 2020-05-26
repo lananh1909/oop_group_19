@@ -5,8 +5,6 @@ import com.process.FormatNumber;
 
 public class IndexSentence {
     private TotalDataHNXModel totalDataHNXModel;
-    private String up;
-    private String down;
 
     public IndexSentence(TotalDataHNXModel dataHNXModel){
         this.totalDataHNXModel = dataHNXModel;
