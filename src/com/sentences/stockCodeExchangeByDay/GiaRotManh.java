@@ -28,7 +28,7 @@ public class GiaRotManh {
 	public String createSentence() {
 		if (date.size() > 0)
 			return "So phien dao dich co gia rot man bang gia san la" + date.size() +
-					"nhu trong ngay " + new FormatDate().formatDate(date.get(0)) + ".";
+					"nhu trong ngay " + new FormatDate().formatDate(date.get(0)) + ". ";
 		else return "";
 	}
 }
