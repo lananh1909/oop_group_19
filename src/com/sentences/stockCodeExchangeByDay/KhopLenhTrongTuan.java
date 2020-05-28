@@ -69,9 +69,9 @@ public class KhopLenhTrongTuan {
 		String max = new FormatNumber().formatNumber(findMax()*10);
 		String min = new FormatNumber().formatNumber(findMin()*10);		
 		
-		return "Trong tuan vua qua, khoi luong khop lenh dao dong trong khoang tu "
-				+ min + " co phieu den " + max + " co phieu; nhieu nhat trong ngay "
-				+ new FormatDate().formatDate(maxDate) + " va it nhat trong ngay "
+		return "Trong thời gian vừa qua, khối lượng khớp lệnh dao động trong khoảng từ "
+				+ min + " cổ phiếu đến " + max + " cổ phiếu; nhiều nhất trong ngày "
+				+ new FormatDate().formatDate(maxDate) + " và ít nhất trong ngày "
 				+ new FormatDate().formatDate(minDate) + ". ";
 	}
 	

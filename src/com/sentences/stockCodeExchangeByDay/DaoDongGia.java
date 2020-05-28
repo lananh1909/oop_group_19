@@ -49,9 +49,9 @@ public class DaoDongGia {
 		String diff = format.formatNumber((max - min) * 1000);
 		String maxDay = new FormatDate().formatDate(this.maxDay);
 		String minDay = new FormatDate().formatDate(this.minDay);
-		return "Gia co phieu dao dong trong thoi gian tu ngay " + new FormatDate().formatDate(stockModel.get(0).getDate()) +
-				" den ngay " + new FormatDate().formatDate(stockModel.get(stockModel.size()-1).getDate()) +
-				" roi vao khoang " + diff + " VND; trong do cao nhat la " + sMax + " VND vao ngay " +
-				maxDay + ", thap nhat la " + sMin + " VND vao ngay " + minDay + ". ";
+		return "Giá cổ phiếu dao động trong thời gian từ ngày " + new FormatDate().formatDate(stockModel.get(0).getDate()) +
+				" đến ngày " + new FormatDate().formatDate(stockModel.get(stockModel.size()-1).getDate()) +
+				" rơi vào khoảng " + diff + " VNĐ; trong đó cao nhất là " + sMax + " VNĐ vào ngày " +
+				maxDay + ", thấp nhất là " + sMin + " VNĐ vào ngày " + minDay + ". ";
 	}
 }

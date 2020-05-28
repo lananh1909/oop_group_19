@@ -45,7 +45,7 @@ public class RoomNN {
 		String sMin = new FormatNumber().formatNumber(findMin() * 10);
 		String sMaxDate = new FormatDate().formatDate(maxDate);
 		String sMinDate = new FormatDate().formatDate(minDate);
-		return "Room NN dat gia tri cao nhat la " + sMax + " vao ngay " + sMaxDate +
-				" va thap nhat la " + sMin + " vao ngay " + sMinDate + ". ";
+		return "Room NN đạt giá trị cao nhất là " + sMax + " vào ngày " + sMaxDate +
+				" và thấp nhất là " + sMin + " vào ngày " + sMinDate + ". ";
 	}
 }
