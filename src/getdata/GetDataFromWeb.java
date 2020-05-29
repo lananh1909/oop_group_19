@@ -33,16 +33,16 @@ public class GetDataFromWeb {
 	
 	public void getIndex() {
 		WebElement inD = this.index.findElement(By.id(this.san + "_idx"));
-		String idx = inD.getText();
+		String idx = inD.getText().replace(",", "");
 		try {
 			out.write(idx + "\n");
 		
 		WebElement idxChange = this.index.findElement(By.id(this.san + "_idxchg"));
-		String idxchg = idxChange.getText();
+		String idxchg = idxChange.getText().replace(",", "");
 		out.write(idxchg + "\t");
 		
 		WebElement idxPct = this.index.findElement(By.id(this.san + "_idxpct"));
-		String idxpct = idxPct.getText();
+		String idxpct = idxPct.getText().replace(",", "");
 		out.write(idxpct + "\n");	
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -58,8 +58,8 @@ public class GetDataFromWeb {
 				List<WebElement> columns = row.findElements(By.tagName("td"));
 				int count = columns.size();
 				for (int i = 0; i < count; i++) {
-					if (i==0 || i==4 || i==6 || i>=8) continue;
-					if (i==2 || i==3) {
+					if (i==0 || i==2 || i==4 || i==6 || i>=8) continue;
+					if (i==3) {
 						WebElement w = columns.get(i).findElement(By.tagName("label"));
 						out.write(w.getText().replace(",", "") + "\t");
 					} else {
@@ -132,19 +132,19 @@ public class GetDataFromWeb {
 				out.write(name + "\t");
 //				out.write(companyName + "\t");
 				
-				for (int j = 1; j < columns_count; j++) {
-					if(j==10 || j==16 || j==17) continue;
-					String cell_text = columns_row.get(j).getText().replace(",", "");
-					if(cell_text.equals("")) cell_text = "0";
-					out.write(cell_text + "\t");
-				}
-				
 //				for (int j = 1; j < columns_count; j++) {
-//					if(j==11 || j==17 || j==18 || j==4 || j==25) continue;
-//					String cell_text = columns_row.get(j).getText().replace(",","");
+//					if(j==10 || j==16 || j==17) continue;
+//					String cell_text = columns_row.get(j).getText().replace(",", "");
 //					if(cell_text.equals("")) cell_text = "0";
 //					out.write(cell_text + "\t");
 //				}
+				
+				for (int j = 1; j < columns_count; j++) {
+					if(j==11 || j==17 || j==18 || j==4 || j==25) continue;
+					String cell_text = columns_row.get(j).getText().replace(",","");
+					if(cell_text.equals("")) cell_text = "0";
+					out.write(cell_text + "\t");
+				}
 				out.write("\n");
 			}
 		} catch (Exception e) {
@@ -156,28 +156,28 @@ public class GetDataFromWeb {
 	
 	public static void main (String [] args) {
 		try {
-//			GetDataFromWeb app = new GetDataFromWeb("VN30","data/26052020/VN30-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HOSE","data/26052020/HOSE-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VN100","data/26052020/VN100-2605.txt");
-			GetDataFromWeb app = new GetDataFromWeb("VNX50","data/26052020/VNX50-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNALL","data/26052020/VNALL-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNMID","data/26052020/VNMID-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNSML","data/26052020/VNSML-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("VNSI","data/26052020/VNSI-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNX","data/26052020/HNX-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNX30","data/26052020/HNX30-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXCON","data/26052020/HNXCON-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXFIN","data/26052020/HNXFIN-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXLCAP","data/26052020/HNXLCAP-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXMSCAP","data/26052020/HNXMSCAP-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("HNXMAN","data/26052020/HNXMAN-2605.txt");
-//			GetDataFromWeb app = new GetDataFromWeb("UPCOM","data/26052020/UPCOM-2605.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VN30","data/29052020/VN30-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HOSE","data/29052020/HOSE-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VN100","data/29052020/VN100-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNX50","data/29052020/VNX50-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNALL","data/29052020/VNALL-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNMID","data/29052020/VNMID-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNSML","data/29052020/VNSML-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("VNSI","data/29052020/VNSI-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNX","data/29052020/HNX-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNX30","data/29052020/HNX30-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXCON","data/29052020/HNXCON-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXFIN","data/29052020/HNXFIN-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXLCAP","data/29052020/HNXLCAP-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXMSCAP","data/29052020/HNXMSCAP-2905.txt");
+//			GetDataFromWeb app = new GetDataFromWeb("HNXMAN","data/29052020/HNXMAN-2905.txt");
+			GetDataFromWeb app = new GetDataFromWeb("UPCOM","data/29052020/UPCOM-2905.txt");
 		
 			app.getElement();
 			app.getIndex();
-			app.getIndexDetail();
+//			app.getIndexDetail();
 //			app.getIndexDetail1();
-//			app.getIndexDetail2();
+			app.getIndexDetail2();
 			app.getData();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -20,7 +20,15 @@ public class GetDataDAO implements IGetDataDAO {
     private TotalDataHNXModel dataHNXModel;
     private List<StockModel> stockList;
 
-    public TotalDataHNXModel getDataHNXModel() {
+    public List<StockModel> getStockList() {
+		return stockList;
+	}
+
+	public void setStockList(List<StockModel> stockList) {
+		this.stockList = stockList;
+	}
+
+	public TotalDataHNXModel getDataHNXModel() {
         return dataHNXModel;
     }
 
@@ -51,7 +59,7 @@ public class GetDataDAO implements IGetDataDAO {
             dataHNXModel = new TotalDataHNXModel(date);
             int count = 0;
 
-            if(file.contains("HNX")) {
+            if(file.contains("HNX") || file.contains("UPCOM")) {
                 while ((line = bf.readLine()) != null) {
                     switch (count) {
                         case 0:

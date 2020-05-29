@@ -27,7 +27,7 @@ public class DungGiaThamChieu {
 	public String createSentence() {
 		int n = count();
 		if (date.size() > 0)
-			return " Số phiên giao dịch đứng giá tham chiếu là " + n +
+			return "Số phiên giao dịch đứng giá tham chiếu là " + n +
 					", như trong ngày " + new FormatDate().formatDate(date.get(0)) + ". ";
 		else return "";
 	}
