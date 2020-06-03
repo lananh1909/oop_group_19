@@ -23,7 +23,7 @@ public class KhoiLuongGiaoDichLon extends MaGiaBanCao{
 			} else
 				code += lst.get(i).getStockCode();
 		}
-		return "Các mã cổ phiếu có khối lượng giao dịch lớn nhất trong ngày hôm nay là " + code +
+		return "Các mã cổ phiếu có khối lượng giao dịch lớn nhất trong ngày là " + code +
 				", trong đó cao nhất là " + lst.get(lst.size() - 1).getStockCode() +
 				" đạt " + new FormatNumber().formatNumber(lst.get(lst.size() - 1).getSumOrderMatchingMass() * 10) + ". ";
 

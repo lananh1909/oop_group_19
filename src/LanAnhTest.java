@@ -5,6 +5,7 @@ import java.util.List;
 import com.dao.IGetDataDAO;
 import com.dao_impl.GetDataDAO;
 import com.modelDataCK.StockModel;
+import com.process.FormatDate;
 import com.sentences.stockCodeExchangeByDay.CacNgayGiam;
 import com.sentences.stockCodeExchangeByDay.DaoDongGia;
 import com.sentences.stockCodeExchangeByDay.DungGiaThamChieu;
@@ -16,6 +17,10 @@ import com.sentences.stockCodeExchangeByDay.TangLienTiep;
 import com.sentences.stockCodeOnDay.DiemSang;
 import com.sentences.stockCodeOnDay.KhoiLuongGiaoDichLon;
 import com.sentences.stockCodeOnDay.MaGiaBanCao;
+import com.sentences.stockCodeOnDay.NNBan;
+import com.sentences.stockCodeOnDay.NNmua;
+import com.sentences.stockCodeOnDay.RoomNNcao;
+import com.sentences.stockCodeOnDay.TDGiaCaoNhat;
 
 public class LanAnhTest {
 	private IGetDataDAO getDataDAO = new GetDataDAO();;
@@ -29,7 +34,8 @@ public class LanAnhTest {
 				"2505",
 				"2605",
 				"2705",
-				"2805"
+				"2805",
+				"2905"
 		};
 	
 		for (int i = 0; i<lst.length; i++) {
@@ -55,15 +61,21 @@ public class LanAnhTest {
 				"2505",
 				"2605",
 				"2705",
-				"2805"
+				"2805",
+				"2905"
 		};
 	
 		for (int i = 0; i<lst.length; i++) {
+			System.out.println(new FormatDate().formatDate(lst[i]) + ":");
 			String file = "data\\" + lst[i] + "2020\\" + san + "-" + lst[i] + ".txt";
 			List<StockModel> stockList = getDataDAO.getDataToList(file);
 //			System.out.println(new MaGiaBanCao(stockList).createSentence());
 //			System.out.println(new DiemSang(stockList).createSentence());
-			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
+//			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
+			System.out.println(new NNmua(stockList).createSentence());
+			System.out.println(new NNBan(stockList).createSentence());
+			System.out.println(new RoomNNcao(stockList).createSentence());
+			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
 		}
 	}
 	
