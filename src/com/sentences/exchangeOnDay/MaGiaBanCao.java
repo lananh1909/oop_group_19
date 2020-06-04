@@ -1,4 +1,4 @@
-package com.sentences.stockCodeOnDay;
+package com.sentences.exchangeOnDay;
 
 import java.util.Collections;
 import java.util.Comparator;

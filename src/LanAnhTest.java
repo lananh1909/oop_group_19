@@ -6,6 +6,13 @@ import com.dao.IGetDataDAO;
 import com.dao_impl.GetDataDAO;
 import com.modelDataCK.StockModel;
 import com.process.FormatDate;
+import com.sentences.exchangeOnDay.DiemSang;
+import com.sentences.exchangeOnDay.KhoiLuongGiaoDichLon;
+import com.sentences.exchangeOnDay.MaGiaBanCao;
+import com.sentences.exchangeOnDay.NNBan;
+import com.sentences.exchangeOnDay.NNmua;
+import com.sentences.exchangeOnDay.RoomNNcao;
+import com.sentences.exchangeOnDay.TDGiaCaoNhat;
 import com.sentences.stockCodeExchangeByDay.CacNgayGiam;
 import com.sentences.stockCodeExchangeByDay.DaoDongGia;
 import com.sentences.stockCodeExchangeByDay.DungGiaThamChieu;
@@ -14,13 +21,6 @@ import com.sentences.stockCodeExchangeByDay.GiamLienTiep;
 import com.sentences.stockCodeExchangeByDay.KhopLenhTrongTuan;
 import com.sentences.stockCodeExchangeByDay.RoomNN;
 import com.sentences.stockCodeExchangeByDay.TangLienTiep;
-import com.sentences.stockCodeOnDay.DiemSang;
-import com.sentences.stockCodeOnDay.KhoiLuongGiaoDichLon;
-import com.sentences.stockCodeOnDay.MaGiaBanCao;
-import com.sentences.stockCodeOnDay.NNBan;
-import com.sentences.stockCodeOnDay.NNmua;
-import com.sentences.stockCodeOnDay.RoomNNcao;
-import com.sentences.stockCodeOnDay.TDGiaCaoNhat;
 
 public class LanAnhTest {
 	private IGetDataDAO getDataDAO = new GetDataDAO();;
@@ -62,7 +62,11 @@ public class LanAnhTest {
 				"2605",
 				"2705",
 				"2805",
-				"2905"
+				"2905",
+				"0106",
+				"0206",
+				"0306",
+				"0406"
 		};
 	
 		for (int i = 0; i<lst.length; i++) {
@@ -81,7 +85,7 @@ public class LanAnhTest {
 	
 	public static void main(String[] args) {
 		LanAnhTest test = new LanAnhTest();
-		test.stockCodeOnDay("HOSE");
+		test.stockCodeOnDay("UPCOM");
 //		test.getHashMap("HOSE");
 //		
 //		for (String key: test.hashMap.keySet()) {
