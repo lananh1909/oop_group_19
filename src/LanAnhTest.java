@@ -21,23 +21,29 @@ import com.sentences.stockCodeExchangeByDay.GiamLienTiep;
 import com.sentences.stockCodeExchangeByDay.KhopLenhTrongTuan;
 import com.sentences.stockCodeExchangeByDay.RoomNN;
 import com.sentences.stockCodeExchangeByDay.TangLienTiep;
+import com.sentences.stockCodeOnDay.CaoNhatThapNhat;
+import com.sentences.stockCodeOnDay.NNMuaBan;
 
 public class LanAnhTest {
 	private IGetDataDAO getDataDAO = new GetDataDAO();;
 	private List<StockModel> stockModel = new ArrayList<StockModel>();
 	private HashMap<String, ArrayList<StockModel>> hashMap = new HashMap<String, ArrayList<StockModel>>(); 
+	private final String lst [] = {
+			"2105",
+			"2205",
+			"2505",
+			"2605",
+			"2705",
+			"2805",
+			"2905",
+			"0106",
+			"0206",
+			"0306",
+			"0406",
+			"0506"
+	};
 	
 	public void getHashMap(String san){
-		String lst [] = {
-				"2105",
-				"2205",
-				"2505",
-				"2605",
-				"2705",
-				"2805",
-				"2905"
-		};
-	
 		for (int i = 0; i<lst.length; i++) {
 			String file = "data\\" + lst[i] + "2020\\" + san + "-" + lst[i] + ".txt";
 			List<StockModel> stockList = getDataDAO.getDataToList(file);
@@ -54,28 +60,14 @@ public class LanAnhTest {
 		}
 	}
 	
-	public void stockCodeOnDay(String san) {
-		String lst [] = {
-				"2105",
-				"2205",
-				"2505",
-				"2605",
-				"2705",
-				"2805",
-				"2905",
-				"0106",
-				"0206",
-				"0306",
-				"0406"
-		};
-	
+	public void exchangeOnDay(String san) {
 		for (int i = 0; i<lst.length; i++) {
 			System.out.println(new FormatDate().formatDate(lst[i]) + ":");
 			String file = "data\\" + lst[i] + "2020\\" + san + "-" + lst[i] + ".txt";
 			List<StockModel> stockList = getDataDAO.getDataToList(file);
-//			System.out.println(new MaGiaBanCao(stockList).createSentence());
-//			System.out.println(new DiemSang(stockList).createSentence());
-//			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
+			System.out.println(new MaGiaBanCao(stockList).createSentence());
+			System.out.println(new DiemSang(stockList).createSentence());
+			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
 			System.out.println(new NNmua(stockList).createSentence());
 			System.out.println(new NNBan(stockList).createSentence());
 			System.out.println(new RoomNNcao(stockList).createSentence());
@@ -83,9 +75,20 @@ public class LanAnhTest {
 		}
 	}
 	
+	public void stockCodeOnDay (String san, String date) {
+		System.out.println(new FormatDate().formatDate(date) + ":");
+		String file = "data\\" + date + "2020\\" + san + "-" + date + ".txt";
+		List<StockModel> stockList = getDataDAO.getDataToList(file);
+		for (StockModel s : stockList) {
+			System.out.println(s.getStockCode() + ":");
+			System.out.println("\t" + new CaoNhatThapNhat(s).createSentence());
+		}
+	}
+	
 	public static void main(String[] args) {
 		LanAnhTest test = new LanAnhTest();
-		test.stockCodeOnDay("UPCOM");
+		test.stockCodeOnDay("HNX30", "0406");
+//		test.exchangeOnDay("VN30");
 //		test.getHashMap("HOSE");
 //		
 //		for (String key: test.hashMap.keySet()) {

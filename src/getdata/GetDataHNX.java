@@ -51,7 +51,7 @@ public class GetDataHNX extends GetDataFromWeb {
 				out.write(name + "\t");
 				
 				for (int j = 1; j < columns_count; j++) {
-					if(j==11 || j==17 || j==18 || j==4 || j==25) continue;
+					if(j==11 || j==17 || j==18 || j==4 || j==25 || j>31) continue;
 					String cell_text = columns_row.get(j).getText().replace(",","");
 					if(cell_text.equals("")) cell_text = "0";
 					out.write(cell_text + "\t");
