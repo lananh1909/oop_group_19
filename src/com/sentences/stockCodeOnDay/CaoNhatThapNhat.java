@@ -9,7 +9,6 @@ public class CaoNhatThapNhat {
 	}
 	
 	public String createSentence() {
-		System.out.println(stockCode.getPriceCostlyHistory() + "-" + stockCode.getPriceLowHistory() + "-" + stockCode.getOrderMatchingInOrDe());
 		if (stockCode.getPriceCostlyHistory() > stockCode.getPriceLowHistory()) {
 			if (stockCode.getOrderMatchingInOrDe() >0) {
 				return  stockCode.getStockCode() +

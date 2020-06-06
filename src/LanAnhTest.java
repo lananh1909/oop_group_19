@@ -87,7 +87,7 @@ public class LanAnhTest {
 	
 	public static void main(String[] args) {
 		LanAnhTest test = new LanAnhTest();
-		test.stockCodeOnDay("HNX30", "0406");
+		test.stockCodeOnDay("UPCOM", "2605");
 //		test.exchangeOnDay("VN30");
 //		test.getHashMap("HOSE");
 //		

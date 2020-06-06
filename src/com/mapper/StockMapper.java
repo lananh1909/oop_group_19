@@ -8,5 +8,4 @@ public class StockMapper extends GenericMapper implements IStockMapper {
     public StockModel mapper(String line, String date) {
         return getStockModel(line, date);
     }
-
 }

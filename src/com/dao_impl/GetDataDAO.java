@@ -2,6 +2,7 @@ package com.dao_impl;
 
 import com.mapper.IStockMapper;
 import com.mapper.StockMapper;
+import com.mapper.StockMapperHNX;
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
 import com.modelDataCK.TotalDataModel;
@@ -78,7 +79,7 @@ public class GetDataDAO implements IGetDataDAO {
                             break;
                     }
                     if(count > 3){
-                        stockMapper = new StockMapper();
+                        stockMapper = new StockMapperHNX();
                         stockList.add(stockMapper.mapper(line, date));
                     }
                     count++;
