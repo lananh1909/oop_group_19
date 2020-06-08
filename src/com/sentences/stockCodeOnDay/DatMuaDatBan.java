@@ -6,7 +6,7 @@ import com.process.FormatNumber;
 public class DatMuaDatBan {
 	StockModel stockCode;
 	
-	public DatMuaDatBan(StockModel stockCode) {
+	public DatMuaDatBan(StockModel stockCode) { 
 		this.stockCode = stockCode;
 	}
 	

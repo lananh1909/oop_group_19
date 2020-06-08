@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -71,25 +72,25 @@ public class LanAnhTest {
 		}
 	}
 	
-	public void exchangeOnDay(String san) {
+	public void exchangeOnDay(String san) throws IOException {
 		for (int i = 0; i<lst.length; i++) {
 			System.out.println(new FormatDate().formatDate(lst[i]) + ":");
 			String file = "data\\" + lst[i] + "2020\\" + san + "-" + lst[i] + ".txt";
 			List<StockModel> stockList = getDataDAO.getDataToList(file);
 
-			if (san.contains("HNX") || san.contains("UPCOM")) {
-				generic = getDataDAO.getDataHNXModel();
+//			if (san.contains("HNX") || san.contains("UPCOM")) {
+				generic = getDataDAO.getDataToHNX(file); // truyền vào cái này
 				TotalDataHNXModel total = (TotalDataHNXModel) generic;
-//				System.out.println(new IndexSentenceHNX(total).createSentence());
-				System.out.println(new HNXmodau(total).createSentence());
-			} else {
-				generic = getDataDAO.getDataModel();
-				TotalDataHOSEModel total1 = (TotalDataHOSEModel) generic;
+				System.out.println(new IndexSentenceHNX(total).createSentence());
+//				System.out.println(new HNXmodau(total).createSentence());
+//			} else { 
+//				generic = getDataDAO.getDataModel();
+//				TotalDataHOSEModel total1 = (TotalDataHOSEModel) generic;
 //				System.out.println(new IndexSentenceHOSE(total1).createSentence());
-				System.out.println(new phien1(total1).createSentence());
-				System.out.println(new phien2(total1).createSentence());
-				System.out.println(new phien3(total1).createSentence());
-			}	
+//				System.out.println(new phien1(total1).createSentence());
+//				System.out.println(new phien2(total1).createSentence());
+//				System.out.println(new phien3(total1).createSentence());
+//			}	
 			
 //			System.out.println(new TangVotGiamManh(stockList, generic).createSentence());	
 			
@@ -116,9 +117,14 @@ public class LanAnhTest {
 	public static void main(String[] args) {
 		LanAnhTest test = new LanAnhTest();
 //		test.stockCodeOnDay("UPCOM", "2605");
-		test.exchangeOnDay("HOSE");
+		try {
+			test.exchangeOnDay("HNX");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 //		test.getHashMap("HOSE");
-//		
+//		chạy r đó
 //		for (String key: test.hashMap.keySet()) {
 //			List<StockModel> stock = test.hashMap.get(key);
 //			System.out.println(key + ":");

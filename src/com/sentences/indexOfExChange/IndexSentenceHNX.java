@@ -12,9 +12,9 @@ public class IndexSentenceHNX {
 
     public String check(){
         if (totalDataHNXModel.getIncreaseAndDecrease() > 0 ){
-            return " tang ";
+            return " tăng ";
         } else
-            return " giam ";
+            return " giảm ";
     }
 
     public String createSentence(){
@@ -25,6 +25,6 @@ public class IndexSentenceHNX {
                 totalDataHNXModel.getNameExchange() + " đạt: " + new FormatNumber().formatNumber(totalDataHNXModel.getExchangeValue()) +
                 " tỷ đồng, khối lượng đạt: " + new FormatNumber().formatNumber(totalDataHNXModel.getExchangeMass()) + " cổ phiếu. ";
     }
-}
+} // đây là câu hôm đầu c viết nhé
 //Kết thúc tuần giao dịch, VN-Index tăng 25,71 điểm (+3,11%), lên 852,74 điểm. Giá trị giao dịch
 // trên HOSE giảm 10,7% xuống 26.534 tỷ đồng, khối lượng giảm 8,4% xuống 1.510 triệu cổ phiếu.

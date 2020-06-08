@@ -2,7 +2,6 @@ package com.dao_impl;
 
 import com.mapper.IStockMapper;
 import com.mapper.StockMapper;
-import com.mapper.StockMapperHNX;
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
 import com.modelDataCK.TotalDataHOSEModel;
@@ -17,51 +16,72 @@ import java.util.List;
 public class GetDataDAO implements IGetDataDAO {
 
     private BufferedReader bf;
-    private TotalDataHOSEModel dataModel;
-    private TotalDataHNXModel dataHNXModel;
-    private List<StockModel> stockList;
-
-    public List<StockModel> getStockList() {
-		return stockList;
-	}
-
-	public void setStockList(List<StockModel> stockList) {
-		this.stockList = stockList;
-	}
-
-	public TotalDataHNXModel getDataHNXModel() {
-        return dataHNXModel;
-    }
-
-    public void setDataHNXModel(TotalDataHNXModel dataHNXModel) {
-        this.dataHNXModel = dataHNXModel;
-    }
-
-    public TotalDataHOSEModel getDataModel() {
-        return dataModel;
-    }
-
-    public void setDataModel(TotalDataHOSEModel dataModel) {
-        this.dataModel = dataModel;
-    }
-
+    
     @Override
     public List<StockModel> getDataToList(String file) {
-    	int start = file.indexOf("-") + 1;
-    	int end = file.indexOf(".");
-    	String date = file.substring(start, end);
-        stockList = new ArrayList<>();
+        int start = file.indexOf("-") + 1;
+        int end = file.indexOf(".");
+        String date = file.substring(start, end);
+        List<StockModel> stockList = new ArrayList<>();
         String line;
         IStockMapper stockMapper = null;
 
         try {
             bf = new BufferedReader(new FileReader(file));
-            dataModel = new TotalDataHOSEModel(date);
-            dataHNXModel = new TotalDataHNXModel(date);
             int count = 0;
 
-            if(file.contains("HNX") || file.contains("UPCOM")) {
+            if(file.contains("HNX")) {
                 while ((line = bf.readLine()) != null) {
+                    if(count > 3){
+                        stockMapper = new StockMapper();
+                        stockList.add(stockMapper.mapper(line, date));
+                    }
+                    count++;
+                }
+            }
+            else {
+                while ((line = bf.readLine()) != null){
+                    if(count > 5){
+                        stockMapper = new StockMapper();
+                        stockList.add(stockMapper.mapper(line, date));
+                    }
+                    count ++;
+                }
+            }
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        finally {
+            try {
+                if(bf != null){
+                    bf.close();
+                }
+            } catch (IOException e){
+                e.getMessage();
+            }
+        }
+        return stockList;
+    }
+
+
+    @Override
+    public String[] getDataToArray(String line) {
+        String [] lineArray = line.split("\\t");
+        return lineArray;
+    }
+
+    @Override
+    public TotalDataHNXModel getDataToHNX(String file) throws IOException {
+    	int start = file.indexOf("-") + 1;
+        int end = file.indexOf(".");
+        String date = file.substring(start, end);
+        TotalDataHNXModel dataHNXModel = new TotalDataHNXModel(date);
+        String line;
+        int count = 0;
+        try{
+            bf = new BufferedReader(new FileReader(file));
+            if(file.contains("HNX") || file.contains("UPCOM")){
+                while ((line = bf.readLine()) != null){
                     switch (count) {
                         case 0:
                             dataHNXModel.setNameExchange(line);
@@ -74,20 +94,36 @@ public class GetDataDAO implements IGetDataDAO {
                             dataHNXModel.setPercentIncreaseAndDecrease(Double.parseDouble(getDataToArray(line)[1]));
                             break;
                         case 3:
-                            dataHNXModel.setExchangeMass(Double.parseDouble(getDataToArray(line)[0]));
                             dataHNXModel.setExchangeValue(Double.parseDouble(getDataToArray(line)[1]));
+                            dataHNXModel.setExchangeMass(Double.parseDouble(getDataToArray(line)[0]));
                             break;
+//                        default: bf.close();
                     }
-                    if(count > 3){
-                        stockMapper = new StockMapperHNX();
-                        stockList.add(stockMapper.mapper(line, date));
-                    }
-                    count++;
+                    count ++;
                 }
             }
-            else {
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        finally {
+            bf.close();
+        }
+        return dataHNXModel;
+    }
+
+    @Override
+    public TotalDataHOSEModel getDataToModel(String file) throws IOException {
+    	int start = file.indexOf("-") + 1;
+        int end = file.indexOf(".");
+        String date = file.substring(start, end);
+        TotalDataHOSEModel dataModel = new TotalDataHOSEModel(date);
+        String line;
+        int count = 0;
+        try{
+            bf = new BufferedReader(new FileReader(file));
+            if(!file.contains("HNX")){
                 while ((line = bf.readLine()) != null){
-                    switch (count){
+                    switch (count) {
                         case 0:
                             dataModel.setNameExchange(line);
                             break;
@@ -117,32 +153,15 @@ public class GetDataDAO implements IGetDataDAO {
                             dataModel.setExchangeValue3(Double.parseDouble(getDataToArray(line)[3]));
                             break;
                     }
-                    if(count > 5){
-                        stockMapper = new StockMapper();
-                        stockList.add(stockMapper.mapper(line, date));
-                    }
                     count ++;
                 }
             }
-//            System.out.println(stockList.size());
         } catch (IOException e){
             e.printStackTrace();
         }
         finally {
-            try {
-                if(bf != null){
-                    bf.close();
-                }
-            } catch (IOException e){
-                e.getMessage();
-            }
+            bf.close();
         }
-        return stockList;
-    }
-
-    @Override
-    public String[] getDataToArray(String line) {
-        String [] lineArray = line.split("\\t");
-        return lineArray;
+        return dataModel;
     }
 }

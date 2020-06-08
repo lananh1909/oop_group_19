@@ -20,7 +20,9 @@ public class TotalDataHNXModel extends GenericTotalModel {
         return exchangeValue;
     }
 
-    public void setExchangeValue(double exchangePercent) {
+    public void setExchangeValue(double exchangeValue) {
         this.exchangeValue = exchangeValue;
     }
 }
+//Khánh ơi à rồi, ok
+// đúng chỗ này rồi, nãy có ghé qua mà ko thấy =))

@@ -6,12 +6,13 @@ import com.modelDataCK.TotalDataHOSEModel;
 import com.dao.IGetDataDAO;
 import com.dao.IStockSum;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class StockSum extends GetDataDAO implements IStockSum {
     @Override
-    public List<StockModel> sumList(String date) {
+    public List<StockModel> sumList(String date) throws IOException {
         String[] listFile = {"HNX30-", "HNX-", "HNXCON-", "HNXFin-", "HNXLCAP-",
                 "HNXMAN-", "HNXMSCAP-", "HOSE-","VN30-", "VN100-", "VNALL-",
                 "VNMID-", "VNSML-", "VNX50-"};
@@ -27,10 +28,10 @@ public class StockSum extends GetDataDAO implements IStockSum {
             String file = "data\\" + date + "052020\\" + listFile[i] + date + "05.txt";
             listStock.addAll(getDataDAO.getDataToList(file));
             if(file.contains("HNX")){
-                dataHNXModels.add(((GetDataDAO) getDataDAO).getDataHNXModel());
+                dataHNXModels.add(((GetDataDAO) getDataDAO).getDataToHNX(file));
             }
             else {
-                dataModels.add(((GetDataDAO) getDataDAO).getDataModel());
+                dataModels.add(((GetDataDAO) getDataDAO).getDataToModel(file));
             }
         }
         return listStock;

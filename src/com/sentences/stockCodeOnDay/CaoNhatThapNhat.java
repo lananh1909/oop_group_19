@@ -3,7 +3,7 @@ package com.sentences.stockCodeOnDay;
 import com.modelDataCK.StockModel;
 
 public class CaoNhatThapNhat {
-	StockModel stockCode;
+	StockModel stockCode; 
 	public CaoNhatThapNhat(StockModel stockCode) {
 		this.stockCode=stockCode;
 	}
