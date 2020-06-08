@@ -2,7 +2,7 @@ package com.dao_impl;
 
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
-import com.modelDataCK.TotalDataModel;
+import com.modelDataCK.TotalDataHOSEModel;
 import com.dao.IGetDataDAO;
 import com.dao.IStockSum;
 
@@ -20,7 +20,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
 
         List<TotalDataHNXModel> dataHNXModels = new ArrayList<>();
 
-        List<TotalDataModel> dataModels = new ArrayList<>();
+        List<TotalDataHOSEModel> dataModels = new ArrayList<>();
 
         for (int i = 0; i < listFile.length; i++) {
             IGetDataDAO getDataDAO = new GetDataDAO();

@@ -10,7 +10,7 @@ import com.process.FormatDate;
 import com.process.SortByPercent;
 
 public class MaGiaBanCao {
-	private List<StockModel> today;
+	List<StockModel> today;
 	
 	public MaGiaBanCao (List<StockModel> today) {
 		this.today = today;
@@ -44,7 +44,7 @@ public class MaGiaBanCao {
 		
 		String s [] = {
 				"Mở cửa phiên giao dịch ngày " + new FormatDate().formatDate(today.get(0).getDate()) +
-				" một số mã cổ phiếu có giá bán cao như " + code + ". ",
+				" một số mã cổ phiếu có giá bán cao " + code + ". ",
 				"Top các mã chứng khoán có giá cổ phiếu tăng mạnh nhất trong ngày hôm này như " +
 				code + ". "
 		};

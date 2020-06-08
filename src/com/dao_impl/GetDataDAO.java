@@ -5,7 +5,7 @@ import com.mapper.StockMapper;
 import com.mapper.StockMapperHNX;
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
-import com.modelDataCK.TotalDataModel;
+import com.modelDataCK.TotalDataHOSEModel;
 import com.dao.IGetDataDAO;
 
 import java.io.BufferedReader;
@@ -17,7 +17,7 @@ import java.util.List;
 public class GetDataDAO implements IGetDataDAO {
 
     private BufferedReader bf;
-    private TotalDataModel dataModel;
+    private TotalDataHOSEModel dataModel;
     private TotalDataHNXModel dataHNXModel;
     private List<StockModel> stockList;
 
@@ -37,11 +37,11 @@ public class GetDataDAO implements IGetDataDAO {
         this.dataHNXModel = dataHNXModel;
     }
 
-    public TotalDataModel getDataModel() {
+    public TotalDataHOSEModel getDataModel() {
         return dataModel;
     }
 
-    public void setDataModel(TotalDataModel dataModel) {
+    public void setDataModel(TotalDataHOSEModel dataModel) {
         this.dataModel = dataModel;
     }
 
@@ -56,7 +56,7 @@ public class GetDataDAO implements IGetDataDAO {
 
         try {
             bf = new BufferedReader(new FileReader(file));
-            dataModel = new TotalDataModel(date);
+            dataModel = new TotalDataHOSEModel(date);
             dataHNXModel = new TotalDataHNXModel(date);
             int count = 0;
 
@@ -101,20 +101,20 @@ public class GetDataDAO implements IGetDataDAO {
                         case 3:
                             dataModel.setIndex1(Double.parseDouble(getDataToArray(line)[0]));
                             dataModel.setIncreAndDecre1(Double.parseDouble(getDataToArray(line)[1]));
-                            dataModel.setPercentIncreAndDecre1(Double.parseDouble(getDataToArray(line)[2]));
-                            dataModel.setData1(Double.parseDouble(getDataToArray(line)[3]));
+                            dataModel.setExchangeMass1(Double.parseDouble(getDataToArray(line)[2]));
+                            dataModel.setExchangeValue1(Double.parseDouble(getDataToArray(line)[3]));
                             break;
                         case 4:
                             dataModel.setIndex2(Double.parseDouble(getDataToArray(line)[0]));
                             dataModel.setIncreAndDecre2(Double.parseDouble(getDataToArray(line)[1]));
-                            dataModel.setPercentIncreAndDecre2(Double.parseDouble(getDataToArray(line)[2]));
-                            dataModel.setData2(Double.parseDouble(getDataToArray(line)[3]));
+                            dataModel.setExchangeMass2(Double.parseDouble(getDataToArray(line)[2]));
+                            dataModel.setExchangeValue2(Double.parseDouble(getDataToArray(line)[3]));
                             break;
                         case 5:
                             dataModel.setIndex3(Double.parseDouble(getDataToArray(line)[0]));
                             dataModel.setIncreAndDecre3(Double.parseDouble(getDataToArray(line)[1]));
-                            dataModel.setPercentIncreAndDecre3(Double.parseDouble(getDataToArray(line)[2]));
-                            dataModel.setData3(Double.parseDouble(getDataToArray(line)[3]));
+                            dataModel.setExchangeMass3(Double.parseDouble(getDataToArray(line)[2]));
+                            dataModel.setExchangeValue3(Double.parseDouble(getDataToArray(line)[3]));
                             break;
                     }
                     if(count > 5){

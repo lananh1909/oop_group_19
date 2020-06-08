@@ -4,7 +4,10 @@ import java.util.List;
 
 import com.dao.IGetDataDAO;
 import com.dao_impl.GetDataDAO;
+import com.modelDataCK.GenericTotalModel;
 import com.modelDataCK.StockModel;
+import com.modelDataCK.TotalDataHNXModel;
+import com.modelDataCK.TotalDataHOSEModel;
 import com.process.FormatDate;
 import com.sentences.exchangeOnDay.DiemSang;
 import com.sentences.exchangeOnDay.KhoiLuongGiaoDichLon;
@@ -13,6 +16,13 @@ import com.sentences.exchangeOnDay.NNBan;
 import com.sentences.exchangeOnDay.NNmua;
 import com.sentences.exchangeOnDay.RoomNNcao;
 import com.sentences.exchangeOnDay.TDGiaCaoNhat;
+import com.sentences.exchangeOnDay.TangVotGiamManh;
+import com.sentences.indexOfExChange.HNXmodau;
+import com.sentences.indexOfExChange.IndexSentenceHNX;
+import com.sentences.indexOfExChange.IndexSentenceHOSE;
+import com.sentences.indexOfExChange.phien1;
+import com.sentences.indexOfExChange.phien2;
+import com.sentences.indexOfExChange.phien3;
 import com.sentences.stockCodeExchangeByDay.CacNgayGiam;
 import com.sentences.stockCodeExchangeByDay.DaoDongGia;
 import com.sentences.stockCodeExchangeByDay.DungGiaThamChieu;
@@ -25,7 +35,8 @@ import com.sentences.stockCodeOnDay.CaoNhatThapNhat;
 import com.sentences.stockCodeOnDay.NNMuaBan;
 
 public class LanAnhTest {
-	private IGetDataDAO getDataDAO = new GetDataDAO();;
+	private GetDataDAO getDataDAO = new GetDataDAO();
+	private GenericTotalModel generic;
 	private List<StockModel> stockModel = new ArrayList<StockModel>();
 	private HashMap<String, ArrayList<StockModel>> hashMap = new HashMap<String, ArrayList<StockModel>>(); 
 	private final String lst [] = {
@@ -65,13 +76,30 @@ public class LanAnhTest {
 			System.out.println(new FormatDate().formatDate(lst[i]) + ":");
 			String file = "data\\" + lst[i] + "2020\\" + san + "-" + lst[i] + ".txt";
 			List<StockModel> stockList = getDataDAO.getDataToList(file);
-			System.out.println(new MaGiaBanCao(stockList).createSentence());
-			System.out.println(new DiemSang(stockList).createSentence());
-			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
-			System.out.println(new NNmua(stockList).createSentence());
-			System.out.println(new NNBan(stockList).createSentence());
-			System.out.println(new RoomNNcao(stockList).createSentence());
-			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
+
+			if (san.contains("HNX") || san.contains("UPCOM")) {
+				generic = getDataDAO.getDataHNXModel();
+				TotalDataHNXModel total = (TotalDataHNXModel) generic;
+//				System.out.println(new IndexSentenceHNX(total).createSentence());
+				System.out.println(new HNXmodau(total).createSentence());
+			} else {
+				generic = getDataDAO.getDataModel();
+				TotalDataHOSEModel total1 = (TotalDataHOSEModel) generic;
+//				System.out.println(new IndexSentenceHOSE(total1).createSentence());
+				System.out.println(new phien1(total1).createSentence());
+				System.out.println(new phien2(total1).createSentence());
+				System.out.println(new phien3(total1).createSentence());
+			}	
+			
+//			System.out.println(new TangVotGiamManh(stockList, generic).createSentence());	
+			
+//			System.out.println(new MaGiaBanCao(stockList).createSentence());
+//			System.out.println(new DiemSang(stockList).createSentence());
+//			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
+//			System.out.println(new NNmua(stockList).createSentence());
+//			System.out.println(new NNBan(stockList).createSentence());
+//			System.out.println(new RoomNNcao(stockList).createSentence());
+//			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
 		}
 	}
 	
@@ -87,8 +115,8 @@ public class LanAnhTest {
 	
 	public static void main(String[] args) {
 		LanAnhTest test = new LanAnhTest();
-		test.stockCodeOnDay("UPCOM", "2605");
-//		test.exchangeOnDay("VN30");
+//		test.stockCodeOnDay("UPCOM", "2605");
+		test.exchangeOnDay("HOSE");
 //		test.getHashMap("HOSE");
 //		
 //		for (String key: test.hashMap.keySet()) {

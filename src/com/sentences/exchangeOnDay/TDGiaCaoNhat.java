@@ -45,7 +45,7 @@ public class TDGiaCaoNhat extends MaGiaBanCao{
 		return "Một số mã chứng khoán trong ngày có thời điểm giá cổ phiếu cao nhất sàn: " + code +
 				" tiêu biểu như " + max.getStockCode() +
 				" với " + new FormatNumber().formatNumber(max.getPriceCostlyHistory() * 1000) + " VNĐ/1cp. " +
-     			"Các mã có giá thấp nhất sàn: " + code1 +
+     			"Mã có giá thấp nhất sàn: " + code1 +
 				" thấp là " + lst1.get(0).getStockCode() +
 				" với " + new FormatNumber().formatNumber(lst1.get(0).getPriceLowHistory() * 1000) + " VNĐ/1cp. ";
 
