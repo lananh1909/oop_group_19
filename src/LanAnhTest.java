@@ -49,15 +49,17 @@ public class LanAnhTest {
 	}
 	
 	public void exchangeOnDay(String san) throws IOException {
+		String file1 = "data\\21052020\\" + san + "-2105" + ".txt";
+		List<StockModel> firstDay = getDataDAO.getDataToList(file1);
 		for (int i = 0; i<lst.length; i++) {
 			System.out.println(new FormatDate().formatDate(lst[i]) + ":");
 			String file = "data\\" + lst[i] + "2020\\" + san + "-" + lst[i] + ".txt";
 			List<StockModel> stockList = getDataDAO.getDataToList(file);
 
 //			if (san.contains("HNX") || san.contains("UPCOM")) {
-				generic = getDataDAO.getDataToHNX(file); // truyền vào cái này
-				TotalDataHNXModel total = (TotalDataHNXModel) generic;
-				System.out.println(new IndexSentenceHNX(total).createSentence());
+//				generic = getDataDAO.getDataToHNX(file);
+//				TotalDataHNXModel total = (TotalDataHNXModel) generic;
+//				System.out.println(new IndexSentenceHNX(total).createSentence());
 //				System.out.println(new HNXmodau(total).createSentence());
 //			} else { 
 //				generic = getDataDAO.getDataModel();
@@ -77,6 +79,7 @@ public class LanAnhTest {
 //			System.out.println(new NNBan(stockList).createSentence());
 //			System.out.println(new RoomNNcao(stockList).createSentence());
 //			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
+			
 		}
 	}
 	

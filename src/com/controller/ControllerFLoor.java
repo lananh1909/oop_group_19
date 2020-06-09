@@ -1,11 +1,18 @@
 package com.controller;
 
 import com.dao_impl.StockSum;
+<<<<<<< HEAD
 import com.modeldatack.StockModel;
 import com.modeldatack.TotalDataHNXModel;
+=======
+import com.modelDataCK.StockModel;
+import com.modelDataCK.TotalDataHNXModel;
+import com.modelDataCK.TotalDataHOSEModel;
+>>>>>>> f0bf2a621e3247872b63e46b4e500a1dc8c9a1ef
 import com.process.ProcessChartIndex;
 import com.sentences.exchangeOnDay.*;
 import com.sentences.indexOfExChange.HNXmodau;
+import com.sentences.indexOfExChange.phien1;
 import com.service_impl.ProcessSentence;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -114,8 +121,34 @@ public class ControllerFLoor extends GenericController implements Initializable 
             String [] arrayDay = comboBoxDate.getValue().split("/");
             day = arrayDay[1] + arrayDay[0];
             sentences.append(new ProcessSentence().listSentence(day, floor));
-            contentFloor.setText(sentences.toString());
+            
+            TotalDataHNXModel dataHNX30Model = new TotalDataHNXModel(day);
+            List<StockModel> stockModelList = new StockSum().sumListOfExchange(day, floor);
 
+            try {
+				dataHNX30Model = new StockSum().sumIndexHNX(day).get(1);
+				
+				sentences.append(new HNXmodau (dataHNX30Model).createSentence());
+
+	            sentences.append("\n");
+
+	            sentences.append(new ColorOfExchange(stockModelList, dataHNX30Model).createSentence());
+
+	            sentences.append(new DiemSang(stockModelList).createSentence()).toString();
+
+	            sentences.append(new TangVotGiamManh(stockModelList, dataHNX30Model).createSentence()).toString();
+	             sentences.append(new KhoiLuongGiaoDichLon(stockModelList).createSentence()).toString();
+
+	            sentences.append(new MaGiaBanCao(stockModelList).createSentence()).toString();
+	            sentences.append(new TDGiaCaoNhat(stockModelList).createSentence());
+	            sentences.append("\n");
+	            String cont = sentences.append(new NNBan(stockModelList).createSentence()).append(new NNmua(stockModelList).createSentence()).append(new RoomNNcao(stockModelList).createSentence()).toString();
+	                    contentFloor.setText(cont);
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
         else {
             contentFloor.setText("Nothing!!!");
@@ -135,8 +168,23 @@ public class ControllerFLoor extends GenericController implements Initializable 
         if(comboBoxDate.getValue() != null){
             String [] arrayDay = comboBoxDate.getValue().split("/");
             day = arrayDay[1] + arrayDay[0];
+<<<<<<< HEAD
+            sentences.append(new ProcessSentence().listSentence(day, floor));
+            
+            TotalDataHOSEModel dataModel = new TotalDataHOSEModel(day);
+            
+            try {
+				dataModel = new StockSum().sumIndexNotHNX(day).get(1);
+
+	            sentences.append(new phien1(dataModel).createSentence());
+	            contentFloor.setText(sentences.toString());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+=======
             sentences.append(new ProcessSentence().listSentence(day, floor)).toString();
             contentFloor.setText(sentences.toString());
+>>>>>>> cf4a09c231d731de00f42434432183bb83e323ba
         }
         else {
             contentFloor.setText("Nothing!!!");
