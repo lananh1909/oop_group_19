@@ -105,7 +105,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
 
 
         StringBuilder sentences = new StringBuilder();
-        String floor = vn30Button.getText();
+        String floor = hnx30Button.getText();
 
         // delete before chart
         lineChart.getData().clear();
@@ -136,7 +136,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
         if(comboBoxDate.getValue() != null){
             String [] arrayDay = comboBoxDate.getValue().split("/");
             day = arrayDay[1] + arrayDay[0];
-            sentences.append(new ProcessSentence().listSentence(day, floor));
+            sentences.append(new ProcessSentence().listSentence(day, floor)).toString();
             contentFloor.setText(sentences.toString());
         }
         else {

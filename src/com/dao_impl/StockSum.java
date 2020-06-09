@@ -36,7 +36,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
 //                "VNMID-", "VNX50-"};
         List<TotalDataHNXModel> hnxModelList = new ArrayList<>();
         for(int i = 0; i < listFile.length; i++){
-            if(listFile[i].contains("HNX")){
+            if(listFile[i].contains("HNX") || listFile[i].contains("UPCOM")){
                 String file = "data\\" + date + "2020\\" + listFile[i] + date + ".txt";
                 IGetDataDAO getDataDAO = new GetDataDAO();
                 hnxModelList.add(((GetDataDAO) getDataDAO).getDataToHNX(file));
