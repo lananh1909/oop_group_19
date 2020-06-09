@@ -7,9 +7,7 @@ import com.modelDataCK.TotalDataHOSEModel;
 import java.util.List;
 
 public interface IStockService {
-    List<StockModel> getDataOneDayOfCode(String date);
-
-    List<StockModel> getDataAllDayOfCode(String code);
+    List<StockModel> getDataOneDayOfCode(String date, String floor);
 
     List<TotalDataHNXModel> getIndexHNXAllDayOfFloor(String floor);
 

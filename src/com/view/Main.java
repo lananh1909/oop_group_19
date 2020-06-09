@@ -10,7 +10,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
-        primaryStage.setTitle("Stock Table month 5");
+        primaryStage.setTitle("Home Page");
         Scene home = new Scene(root);
         home.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
         primaryStage.setScene(home);

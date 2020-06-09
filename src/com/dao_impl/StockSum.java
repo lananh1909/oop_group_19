@@ -17,15 +17,15 @@ public class StockSum extends GetDataDAO implements IStockSum {
     String[] listFile = {"HNX-",  "HNX30-", "HOSE-","VN30-"};
 
     @Override
-    public List<StockModel> sumList(String date) {
+    public List<StockModel> sumList(String date, String floor) {
 
         List<StockModel> listStock = new ArrayList<>();
 
-        for (int i = 0; i < listFile.length; i++) {
+
             IGetDataDAO getDataDAO = new GetDataDAO();
-            String file = "data\\" + date + "2020\\" + listFile[i] + date + ".txt";
+            String file = "data\\" + date + "2020\\" + floor + "-" + date + ".txt";
             listStock.addAll(getDataDAO.getDataToList(file));
-        }
+
         return listStock;
     }
 
@@ -36,7 +36,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
 //                "VNMID-", "VNX50-"};
         List<TotalDataHNXModel> hnxModelList = new ArrayList<>();
         for(int i = 0; i < listFile.length; i++){
-            if(listFile[i].contains("HNX")){
+            if(listFile[i].contains("HNX") || listFile[i].contains("UPCOM")){
                 String file = "data\\" + date + "2020\\" + listFile[i] + date + ".txt";
                 IGetDataDAO getDataDAO = new GetDataDAO();
                 hnxModelList.add(((GetDataDAO) getDataDAO).getDataToHNX(file));

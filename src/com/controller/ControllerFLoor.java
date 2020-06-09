@@ -65,6 +65,8 @@ public class ControllerFLoor extends GenericController implements Initializable 
         // delete before chart
         lineChart.getData().clear();
 
+        lineChart.setCreateSymbols(false);
+
         lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
         if(comboBoxDate.getValue() != null){
             String [] arrayDay = comboBoxDate.getValue().split("/");
@@ -107,7 +109,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
 
 
         StringBuilder sentences = new StringBuilder();
-        String floor = vn30Button.getText();
+        String floor = hnx30Button.getText();
 
         // delete before chart
         lineChart.getData().clear();
@@ -164,6 +166,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
         if(comboBoxDate.getValue() != null){
             String [] arrayDay = comboBoxDate.getValue().split("/");
             day = arrayDay[1] + arrayDay[0];
+<<<<<<< HEAD
             sentences.append(new ProcessSentence().listSentence(day, floor));
             
             TotalDataHOSEModel dataModel = new TotalDataHOSEModel(day);
@@ -176,6 +179,10 @@ public class ControllerFLoor extends GenericController implements Initializable 
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+=======
+            sentences.append(new ProcessSentence().listSentence(day, floor)).toString();
+            contentFloor.setText(sentences.toString());
+>>>>>>> cf4a09c231d731de00f42434432183bb83e323ba
         }
         else {
             contentFloor.setText("Nothing!!!");
