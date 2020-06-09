@@ -64,8 +64,7 @@ public class phien1 {
     			"Đợt một, " + nameOfIndex() + check3() + Math.abs(totalDataModel.getIncreAndDecre1()) + 
     			" điểm, đạt " + totalDataModel.getIndex1() + " giao dịch với " + new FormatNumber().formatNumber(totalDataModel.getExchangeMass1())+
     			" cổ phiếu khớp lệnh, tương đương " + totalDataModel.getExchangeValue1() + " tỷ đồng. "
-    			
-    			
+
          	};
     int r = (int) (Math.random()*6);
     return sentences[r];

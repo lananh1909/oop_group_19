@@ -4,7 +4,8 @@ import com.dao.IStockSum;
 import com.dao_impl.StockSum;
 import com.modelDataCK.TotalDataHNXModel;
 import com.modelDataCK.TotalDataHOSEModel;
-import com.sentences.IndexSentence;
+
+import com.sentences.indexOfExChange.IndexSentenceHNX;
 import com.service.IProcessSentence;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class ProcessSentence implements IProcessSentence {
 
                 for (int i = 0; i < totalDataHNXModels.size(); i++){
                     if(totalDataHNXModels.get(i).getNameExchange().equalsIgnoreCase(codeFloor)){
-                       index = new IndexSentence(totalDataHNXModels.get(i)).createSentence();
+                       index = new IndexSentenceHNX(totalDataHNXModels.get(i)).createSentence();
                     }
                 }
             }
@@ -39,7 +40,7 @@ public class ProcessSentence implements IProcessSentence {
 
                 for (int i = 0; i < totalDataModels.size(); i++){
                     if(totalDataModels.get(i).getNameExchange().equalsIgnoreCase(codeFloor)){
-                      index = new IndexSentence(totalDataModels.get(i)).createSentence();
+                      index = new IndexSentenceHNX(totalDataHNXModels.get(i)).createSentence();
                     }
                 }
             }

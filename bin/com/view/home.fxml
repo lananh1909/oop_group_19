@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="808.0" prefWidth="1438.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.ControllerHome">
+   <children>
+      <VBox prefHeight="709.0" prefWidth="323.0" style="-fx-background-color: #EBE8F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="193.0" fitWidth="324.0" pickOnBounds="true" preserveRatio="true" />
+            <Button id="code" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="325.0" style="-fx-border-color: white;" text="Mã chứng khoán">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/code.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handlButoonActionDate" prefHeight="60.0" prefWidth="325.0" style="-fx-border-color: white;" text="Ngày">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/date.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <Button fx:id="floorButton" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handlButoonActionFloor" prefHeight="60.0" prefWidth="325.0" style="-fx-border-color: white;" text="Sàn">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/floor.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="325.0" style="-fx-border-color: white;" text="Xu hướng">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/vocation.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+            <Button alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="325.0" style="-fx-border-color: white;" text="Tin nóng">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/hot_new.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <Label layoutX="351.0" layoutY="27.0" prefHeight="37.0" prefWidth="253.0" text="Stock Code Today" textFill="#d03d3d">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER_LEFT" layoutX="385.0" layoutY="179.0" prefHeight="49.0" prefWidth="997.0" style="-fx-background-color: #5A21CD;">
+         <children>
+            <Label text="Stock name" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="Giá trần" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="Giá sàn" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="Giá tham chiếu" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="Tổng khối lượng" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="Giá" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="NN mua" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="NN bán" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" text="Room NN" textFill="#fcf0f0">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox layoutX="385.0" layoutY="228.0" prefHeight="578.0" prefWidth="997.0" style="-fx-border-color: white;">
+         <children>
+            <TableView fx:id="stockTable" prefHeight="581.0" prefWidth="995.0" style="-fx-background-color: black; -fx-border-color: yellow; fx-text-fill: red; -fx-border-color: red;">
+              <columns>
+                <TableColumn id="color_number" fx:id="stockColumn" prefWidth="130.0" style="-fx-text-fill: #35ff00; -fx-background-color: #212121b5;" />
+                <TableColumn fx:id="ceilingColumn" prefWidth="101.0" style="-fx-text-fill: #ff00ff; -fx-background-color: #212121b5;" />
+                  <TableColumn fx:id="floorColumn" prefWidth="97.0" style="-fx-text-fill: #00fff3; -fx-background-color: #212121b5;" />
+                  <TableColumn fx:id="referenceColumn" prefWidth="136.0" style="-fx-text-fill: #fdff00; -fx-background-color: #212121b5;" />
+                  <TableColumn fx:id="sumMassColumn" prefWidth="126.0" />
+                  <TableColumn fx:id="priceColumn" prefWidth="86.0" />
+                  <TableColumn fx:id="nnBuyColumn" minWidth="5.0" prefWidth="97.0" />
+                  <TableColumn fx:id="nnSellColumn" minWidth="9.0" prefWidth="102.0" />
+                  <TableColumn fx:id="roomColumn" prefWidth="117.0" />
+              </columns>
+            </TableView>
+         </children></VBox>
+      <ComboBox fx:id="comboBoxDay" layoutX="385.0" layoutY="91.0" prefWidth="150.0" promptText="Ngày" />
+      <ComboBox fx:id="comboBoxFloor" layoutX="622.0" layoutY="91.0" prefWidth="150.0" promptText="Sàn" />
+   </children>
+</AnchorPane>

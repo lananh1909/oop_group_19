@@ -4,8 +4,9 @@ import java.util.List;
 
 import com.modelDataCK.StockModel;
 import com.process.SortByOrderMatchingInOrDe;
+import com.sentences.exchangeOnDay.MaGiaBanCao;
 
-public class GiamManh extends MaGiaBanCao{
+public class GiamManh extends MaGiaBanCao {
 	
 	public GiamManh(List<StockModel> today) {
 		super(today);

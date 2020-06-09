@@ -1,0 +1,17 @@
+#searchButton{
+    -fx-background-color: aqua;
+}
+.button:hover {
+    -fx-background-color: red;
+    -fx-scale-y: 1.1;
+    -fx-text-fill: azure;
+}
+
+.button:pressed:hover {
+    -fx-scale-y: 0.9;
+    -fx-scale-x: 0.9;
+}
+
+#color_number{
+    -fx-text-fill: aquamarine;
+}
