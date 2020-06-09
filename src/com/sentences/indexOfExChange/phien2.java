@@ -1,7 +1,7 @@
 package com.sentences.indexOfExChange;
 
 
-import com.modelDataCK.TotalDataHOSEModel;
+import com.modeldatack.TotalDataHOSEModel;
 import com.process.FormatNumber;
 
 public class phien2 extends phien1{

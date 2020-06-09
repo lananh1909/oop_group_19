@@ -2,9 +2,9 @@ package com.service_impl;
 
 import com.dao.IStockSum;
 import com.dao_impl.StockSum;
-import com.modelDataCK.StockModel;
-import com.modelDataCK.TotalDataHNXModel;
-import com.modelDataCK.TotalDataHOSEModel;
+import com.modeldatack.StockModel;
+import com.modeldatack.TotalDataHNXModel;
+import com.modeldatack.TotalDataHOSEModel;
 import com.service.IStockService;
 
 import java.io.IOException;

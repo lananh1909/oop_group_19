@@ -1,6 +1,6 @@
 package com.sentences.stockCodeOnDay;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 
 public class CaoNhatThapNhat {
 	StockModel stockCode; 

@@ -2,7 +2,7 @@ package com.sentences.exchangeOnDay;
 
 import java.util.List;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 import com.process.SortByOrderMatchingInOrDe;
 
 public class DiemSang extends MaGiaBanCao{

@@ -2,7 +2,7 @@ package com.sentences.exchangeOnDay;
 
 import java.util.List;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 
 public class TangTruongManh {
 	List<StockModel> firstDay;

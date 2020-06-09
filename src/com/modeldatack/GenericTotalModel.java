@@ -1,4 +1,4 @@
-package com.modelDataCK;
+package com.modeldatack;
 
 public class GenericTotalModel {
 	private String date;

@@ -1,4 +1,4 @@
-package com.modelDataCK;
+package com.modeldatack;
 
 import java.io.Serializable;
 

@@ -1,7 +1,7 @@
 package com.process;
 
-import com.modelDataCK.TotalDataHNXModel;
-import com.modelDataCK.TotalDataHOSEModel;
+import com.modeldatack.TotalDataHNXModel;
+import com.modeldatack.TotalDataHOSEModel;
 import com.service_impl.StockService;
 import javafx.scene.chart.XYChart;
 

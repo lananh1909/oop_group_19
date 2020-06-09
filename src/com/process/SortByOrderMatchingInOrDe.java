@@ -2,7 +2,7 @@ package com.process;
 
 import java.util.Comparator;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 
 public class SortByOrderMatchingInOrDe implements Comparator<StockModel>{
 	public int compare (StockModel a, StockModel b) {

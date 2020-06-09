@@ -2,8 +2,8 @@ package com.sentences.exchangeOnDay;
 
 import java.util.List;
 
-import com.modelDataCK.GenericTotalModel;
-import com.modelDataCK.StockModel;
+import com.modeldatack.GenericTotalModel;
+import com.modeldatack.StockModel;
 import com.process.FormatDate;
 
 public class ColorOfExchange extends MaGiaBanCao {

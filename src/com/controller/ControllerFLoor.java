@@ -1,15 +1,12 @@
 package com.controller;
 
 import com.dao_impl.StockSum;
-import com.modelDataCK.StockModel;
-import com.modelDataCK.TotalDataHNXModel;
+import com.modeldatack.StockModel;
+import com.modeldatack.TotalDataHNXModel;
 import com.process.ProcessChartIndex;
 import com.sentences.exchangeOnDay.*;
 import com.sentences.indexOfExChange.HNXmodau;
 import com.service_impl.ProcessSentence;
-import com.service_impl.StockService;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

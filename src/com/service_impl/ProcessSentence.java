@@ -2,8 +2,8 @@ package com.service_impl;
 
 import com.dao.IStockSum;
 import com.dao_impl.StockSum;
-import com.modelDataCK.TotalDataHNXModel;
-import com.modelDataCK.TotalDataHOSEModel;
+import com.modeldatack.TotalDataHNXModel;
+import com.modeldatack.TotalDataHOSEModel;
 
 import com.sentences.indexOfExChange.IndexSentenceHNX;
 import com.sentences.indexOfExChange.IndexSentenceHOSE;
