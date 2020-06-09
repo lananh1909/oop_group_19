@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 import com.process.FormatDate;
 import com.process.SortByPercent;
 

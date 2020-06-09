@@ -1,4 +1,4 @@
-package com.modelDataCK;
+package com.modeldatack;
 
 public class TotalDataHNXModel extends GenericTotalModel {
     private double exchangeMass;  // khối lượng giao dịch

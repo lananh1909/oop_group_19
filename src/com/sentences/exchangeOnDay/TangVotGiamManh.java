@@ -3,8 +3,8 @@ package com.sentences.exchangeOnDay;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.modelDataCK.GenericTotalModel;
-import com.modelDataCK.StockModel;
+import com.modeldatack.GenericTotalModel;
+import com.modeldatack.StockModel;
 
 public class TangVotGiamManh extends MaGiaBanCao {
 	private GenericTotalModel generic;

@@ -1,6 +1,6 @@
 package com.mapper;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 
 public class StockMapperHNX extends GenericMapper implements IStockMapper{
 	@Override

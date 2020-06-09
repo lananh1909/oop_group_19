@@ -3,8 +3,7 @@ package com.sentences.stockCodeExchangeByDay;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.modelDataCK.StockModel;
-import com.process.FormatDate;
+import com.modeldatack.StockModel;
 
 public class GiaTangManh {
 	private List<StockModel> stockModel = new ArrayList<StockModel>();

@@ -3,7 +3,7 @@ package com.sentences.stockCodeExchangeByDay;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 import com.process.FormatDate;
 
 //So phien dao dich co gia rot manh bang gia san n diem

@@ -1,4 +1,4 @@
-package com.modelDataCK;
+package com.modeldatack;
 
 public class TotalDataHOSEModel extends GenericTotalModel{
     private double index1;

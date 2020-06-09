@@ -2,7 +2,7 @@ package com.process;
 
 import java.util.Comparator;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 
 public class SortBySumOrderMatchingMass implements Comparator<StockModel> {
 	@Override

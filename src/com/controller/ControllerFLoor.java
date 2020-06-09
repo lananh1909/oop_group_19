@@ -1,17 +1,19 @@
 package com.controller;
 
 import com.dao_impl.StockSum;
+<<<<<<< HEAD
+import com.modeldatack.StockModel;
+import com.modeldatack.TotalDataHNXModel;
+=======
 import com.modelDataCK.StockModel;
 import com.modelDataCK.TotalDataHNXModel;
 import com.modelDataCK.TotalDataHOSEModel;
+>>>>>>> f0bf2a621e3247872b63e46b4e500a1dc8c9a1ef
 import com.process.ProcessChartIndex;
 import com.sentences.exchangeOnDay.*;
 import com.sentences.indexOfExChange.HNXmodau;
 import com.sentences.indexOfExChange.phien1;
 import com.service_impl.ProcessSentence;
-import com.service_impl.StockService;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

@@ -1,6 +1,6 @@
 package com.sentences.indexOfExChange;
 
-import com.modelDataCK.TotalDataHNXModel;
+import com.modeldatack.TotalDataHNXModel;
 import com.process.FormatDate;
 import com.process.FormatNumber;
 

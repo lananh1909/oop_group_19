@@ -1,8 +1,8 @@
 package com.service;
 
-import com.modelDataCK.StockModel;
-import com.modelDataCK.TotalDataHNXModel;
-import com.modelDataCK.TotalDataHOSEModel;
+import com.modeldatack.StockModel;
+import com.modeldatack.TotalDataHNXModel;
+import com.modeldatack.TotalDataHOSEModel;
 
 import java.util.List;
 

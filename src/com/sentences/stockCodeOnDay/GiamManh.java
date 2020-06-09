@@ -2,7 +2,7 @@ package com.sentences.stockCodeOnDay;
 
 import java.util.List;
 
-import com.modelDataCK.StockModel;
+import com.modeldatack.StockModel;
 import com.process.SortByOrderMatchingInOrDe;
 import com.sentences.exchangeOnDay.MaGiaBanCao;
 
