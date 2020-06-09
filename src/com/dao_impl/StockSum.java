@@ -14,7 +14,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
     //    String[] listFile = {"HNX30-", "HNX-", "HNXCON-", "HNXFIN-", "HNXLCAP-",
 //            "HNXMAN-", "HNXMSCAP-", "HOSE-","VN30-", "VN100-", "VNALL-",
 //            "VNMID-", "VNX50-"};
-    String[] listFile = {"HNX-", "HOSE-","VN30-", "VN100-"};
+    String[] listFile = {"HNX-",  "HNX30-", "HOSE-","VN30-"};
 
     @Override
     public List<StockModel> sumList(String date) {
@@ -23,7 +23,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
 
         for (int i = 0; i < listFile.length; i++) {
             IGetDataDAO getDataDAO = new GetDataDAO();
-            String file = "data\\" + date + "052020\\" + listFile[i] + date + "05.txt";
+            String file = "data\\" + date + "2020\\" + listFile[i] + date + ".txt";
             listStock.addAll(getDataDAO.getDataToList(file));
         }
         return listStock;
@@ -37,7 +37,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
         List<TotalDataHNXModel> hnxModelList = new ArrayList<>();
         for(int i = 0; i < listFile.length; i++){
             if(listFile[i].contains("HNX")){
-                String file = "data\\" + date + "052020\\" + listFile[i] + date + "05.txt";
+                String file = "data\\" + date + "2020\\" + listFile[i] + date + ".txt";
                 IGetDataDAO getDataDAO = new GetDataDAO();
                 hnxModelList.add(((GetDataDAO) getDataDAO).getDataToHNX(file));
             }
@@ -53,11 +53,18 @@ public class StockSum extends GetDataDAO implements IStockSum {
         List<TotalDataHOSEModel> modelList = new ArrayList<>();
         for(int i = 0; i < listFile.length; i++){
             if(!listFile[i].contains("HNX")){
-                String file = "data\\" + date + "052020\\" + listFile[i] + date + "05.txt";
+                String file = "data\\" + date + "2020\\" + listFile[i] + date + ".txt";
                 IGetDataDAO getDataDAO = new GetDataDAO();
                 modelList.add(((GetDataDAO) getDataDAO).getDataToModel(file));
             }
         }
         return modelList;
+    }
+
+    @Override
+    public List<StockModel> sumListOfExchange(String date, String floor) {
+        String file = "data\\" + date + "2020\\" + floor + "-" + date + ".txt";
+        IGetDataDAO getDataDAO = new GetDataDAO();
+        return getDataDAO.getDataToList(file);
     }
 }

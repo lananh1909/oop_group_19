@@ -1,9 +1,13 @@
 package com.controller;
 
 import com.dao_impl.StockSum;
+import com.modelDataCK.StockModel;
+import com.modelDataCK.TotalDataHNXModel;
 import com.process.ProcessChartIndex;
+import com.sentences.exchangeOnDay.*;
 import com.sentences.indexOfExChange.HNXmodau;
 import com.service_impl.ProcessSentence;
+import com.service_impl.StockService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -16,9 +20,10 @@ import javafx.scene.control.TextArea;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerFLoor implements Initializable {
+public class ControllerFLoor extends GenericController implements Initializable {
     @FXML
     private Button hnxButton;
 
@@ -43,8 +48,8 @@ public class ControllerFLoor implements Initializable {
     @FXML
     LineChart<String, Double> lineChart;
 
-    ObservableList<String> list = FXCollections.observableArrayList("5/21/2020", "5/22/2020", "5/23/2020",
-            "5/24/2020", "5/25/2020", "5/26/2020", "5/27/2020");
+//    ObservableList<String> list = FXCollections.observableArrayList("05/21/2020", "05/22/2020", "05/23/2020",
+//            "05/24/2020", "05/25/2020", "05/26/2020", "05/27/2020");
 
     private String day = null;
 
@@ -60,11 +65,33 @@ public class ControllerFLoor implements Initializable {
 
         lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
         if(comboBoxDate.getValue() != null){
-            day = comboBoxDate.getValue().split("/")[1];
+            String [] arrayDay = comboBoxDate.getValue().split("/");
+            day = arrayDay[1] + arrayDay[0];
             sentences.append(new ProcessSentence().listSentence(day, floor)).toString();
             try {
-                String cont =  sentences.append(new HNXmodau( (new StockSum().sumIndexHNX(day)).get(0)).createSentence()).toString();
-                contentFloor.setText(cont);
+
+                TotalDataHNXModel dataHNXModel = new TotalDataHNXModel(day);
+
+                List<StockModel> stockModelList = new StockSum().sumListOfExchange(day, floor);
+
+                dataHNXModel = new StockSum().sumIndexHNX(day).get(0);
+
+                sentences.append(new HNXmodau (dataHNXModel).createSentence());
+
+                sentences.append("\n");
+
+                sentences.append(new ColorOfExchange(stockModelList, dataHNXModel).createSentence());
+
+                sentences.append(new DiemSang(stockModelList).createSentence()).toString();
+
+                sentences.append(new TangVotGiamManh(stockModelList, dataHNXModel).createSentence()).toString();
+                 sentences.append(new KhoiLuongGiaoDichLon(stockModelList).createSentence()).toString();
+
+                sentences.append(new MaGiaBanCao(stockModelList).createSentence()).toString();
+                sentences.append(new TDGiaCaoNhat(stockModelList).createSentence());
+                sentences.append("\n");
+                String cont = sentences.append(new NNBan(stockModelList).createSentence()).append(new NNmua(stockModelList).createSentence()).append(new RoomNNcao(stockModelList).createSentence()).toString();
+                        contentFloor.setText(cont);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -85,7 +112,8 @@ public class ControllerFLoor implements Initializable {
 
         lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
         if(comboBoxDate.getValue() != null){
-            day = comboBoxDate.getValue().split("/")[1];
+            String [] arrayDay = comboBoxDate.getValue().split("/");
+            day = arrayDay[1] + arrayDay[0];
             sentences.append(new ProcessSentence().listSentence(day, floor));
             contentFloor.setText(sentences.toString());
 
@@ -106,7 +134,8 @@ public class ControllerFLoor implements Initializable {
 
         lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
         if(comboBoxDate.getValue() != null){
-            day = comboBoxDate.getValue().split("/")[1];
+            String [] arrayDay = comboBoxDate.getValue().split("/");
+            day = arrayDay[1] + arrayDay[0];
             sentences.append(new ProcessSentence().listSentence(day, floor));
             contentFloor.setText(sentences.toString());
         }
@@ -128,7 +157,8 @@ public class ControllerFLoor implements Initializable {
 
         lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
         if(comboBoxDate.getValue() != null){
-            day = comboBoxDate.getValue().split("/")[1];
+            String [] arrayDay = comboBoxDate.getValue().split("/");
+            day = arrayDay[1] + arrayDay[0];
             sentences.append(new ProcessSentence().listSentence(day, floor));
             contentFloor.setText(sentences.toString());
         }
@@ -148,7 +178,8 @@ public class ControllerFLoor implements Initializable {
 
         lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
         if(comboBoxDate.getValue() != null){
-            day = comboBoxDate.getValue().split("/")[1];
+            String [] arrayDay = comboBoxDate.getValue().split("/");
+            day = arrayDay[1] + arrayDay[0];
             sentences.append(new ProcessSentence().listSentence(day, floor));
             contentFloor.setText(sentences.toString());
         }
@@ -159,6 +190,6 @@ public class ControllerFLoor implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        comboBoxDate.setItems(list);
+        comboBoxDate.setItems(listDay);
     }
 }

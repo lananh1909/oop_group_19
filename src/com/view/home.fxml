@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
+
 <AnchorPane prefHeight="808.0" prefWidth="1438.0" style="-fx-background-color: #FFF;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.ControllerHome">
    <children>
       <VBox prefHeight="709.0" prefWidth="323.0" style="-fx-background-color: #EBE8F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -17,7 +19,7 @@
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/code.jpg" />
+                        <Image url="@../../../data/images/code.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -29,7 +31,7 @@
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/date.jpg" />
+                        <Image url="@../../../data/images/date.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -44,7 +46,7 @@
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/floor.jpg" />
+                        <Image url="@../../../data/images/floor.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -59,7 +61,7 @@
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/vocation.jpg" />
+                        <Image url="@../../../data/images/vocation.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -74,7 +76,7 @@
                <graphic>
                   <ImageView fitHeight="28.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/hot_new.jpg" />
+                        <Image url="@../../../data/images/hot_new.jpg" />
                      </image>
                   </ImageView>
                </graphic>
@@ -186,5 +188,6 @@
          </children></VBox>
       <ComboBox fx:id="comboBoxDay" layoutX="385.0" layoutY="91.0" prefWidth="150.0" promptText="Ngày" />
       <ComboBox fx:id="comboBoxFloor" layoutX="622.0" layoutY="91.0" prefWidth="150.0" promptText="Sàn" />
+      <Button layoutX="873.0" layoutY="91.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Search" />
    </children>
 </AnchorPane>

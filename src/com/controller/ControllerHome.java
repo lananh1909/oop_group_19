@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ControllerHome implements Initializable {
+public class ControllerHome extends GenericController implements Initializable {
     @FXML
     private TableView<StockModel> stockTable;
 
@@ -56,7 +56,7 @@ public class ControllerHome implements Initializable {
     private ComboBox<String> comboBoxDay;
 
     @FXML
-            private ComboBox<String> comboBoxFloor;
+    private ComboBox<String> comboBoxFloor;
 
     ObservableList<String> listDay = FXCollections.observableArrayList("5/21/2020", "5/22/2020", "5/23/2020",
             "5/24/2020", "5/25/2020", "5/26/2020", "5/27/2020");
@@ -107,7 +107,6 @@ public class ControllerHome implements Initializable {
         nnSellColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("sellForeign"));
         roomColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("RoomNN"));
 
-
         stockTable.setItems(getStockModel());
     }
 
@@ -117,11 +116,16 @@ public class ControllerHome implements Initializable {
     public ObservableList<StockModel> getStockModel(){
         ObservableList<StockModel> stockModels = FXCollections.observableArrayList();
         List<StockModel> stockModelList = new ArrayList<>();
-        stockModelList = new StockService().getDataOneDayOfCode("21");
+        stockModelList = new StockService().getDataOneDayOfCode("2105");
         for(StockModel st : stockModelList){
             stockModels.add(st);
         }
         return stockModels;
+    }
+
+    public void buttonSearch(ActionEvent event){
+        String [] arrayDay = comboBoxDay.getValue().split("/");
+        String date = arrayDay[1] + arrayDay[0];
     }
 }
 

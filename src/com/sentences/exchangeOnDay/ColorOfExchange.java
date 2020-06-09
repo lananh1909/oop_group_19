@@ -43,9 +43,8 @@ public class ColorOfExchange extends MaGiaBanCao {
 					new FormatDate().formatDate(generic.getDate()) + ". ";
 		}
 		
-		if (findRed() > (int) n) {
+		else {
 			return "Ngày " + new FormatDate().formatDate(generic.getDate()) + " sắc đỏ bao trùm trên sàn " + generic.getNameExchange() +". ";
 		}
-		return "";
 	}
 }
