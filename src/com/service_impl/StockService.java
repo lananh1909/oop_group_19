@@ -27,10 +27,10 @@ public class StockService implements IStockService {
     "2505", "2605", "2705", "2805", "2905"};
 
     @Override
-    public List<StockModel> getDataOneDayOfCode(String date) {
+    public List<StockModel> getDataOneDayOfCode(String date, String floor) {
         Set<StockModel> modelSet = new HashSet<>();
         try {
-            modelSet.addAll(stockSum.sumList(date));
+            modelSet.addAll(stockSum.sumList(date, floor));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -41,24 +41,7 @@ public class StockService implements IStockService {
         return lis;
     }
 
-    @Override
-    public List<StockModel> getDataAllDayOfCode(String code) {
 
-        Set<StockModel> stockModelSet = new HashSet<>();
-        for(int i = 0; i<day.length; i++){
-            try {
-                stockModelSet.addAll(stockSum.sumList(day[i]));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        for(StockModel st : stockModelSet){
-            if(st.getStockCode().equalsIgnoreCase(code)){
-                modelList.add(st);
-            }
-        }
-        return modelList;
-    }
 
     @Override
     public List<TotalDataHNXModel> getIndexHNXAllDayOfFloor(String floor) {

@@ -12,7 +12,7 @@
       <VBox prefHeight="709.0" prefWidth="323.0" style="-fx-background-color: #EBE8F0;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <ImageView fitHeight="193.0" fitWidth="324.0" pickOnBounds="true" preserveRatio="true" />
-            <Button id="code" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="325.0" style="-fx-border-color: white;" text="Mã chứng khoán">
+            <Button id="code" alignment="BASELINE_LEFT" graphicTextGap="20.0" mnemonicParsing="false" onAction="#handlButoonActionStock" prefHeight="60.0" prefWidth="325.0" style="-fx-border-color: white;" text="Mã chứng khoán">
                <font>
                   <Font size="18.0" />
                </font>
@@ -188,6 +188,7 @@
          </children></VBox>
       <ComboBox fx:id="comboBoxDay" layoutX="385.0" layoutY="91.0" prefWidth="150.0" promptText="Ngày" />
       <ComboBox fx:id="comboBoxFloor" layoutX="622.0" layoutY="91.0" prefWidth="150.0" promptText="Sàn" />
-      <Button layoutX="873.0" layoutY="91.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="85.0" text="Search" />
+      <Button layoutX="873.0" layoutY="91.0" mnemonicParsing="false" onAction="#buttonSearch" prefHeight="25.0" prefWidth="85.0" text="Search" />
+      <Label fx:id="notify" layoutX="385.0" layoutY="142.0" prefHeight="17.0" prefWidth="507.0" />
    </children>
 </AnchorPane>

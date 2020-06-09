@@ -63,6 +63,8 @@ public class ControllerFLoor extends GenericController implements Initializable 
         // delete before chart
         lineChart.getData().clear();
 
+        lineChart.setCreateSymbols(false);
+
         lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
         if(comboBoxDate.getValue() != null){
             String [] arrayDay = comboBoxDate.getValue().split("/");
