@@ -164,7 +164,10 @@ public class ControllerFLoor extends GenericController implements Initializable 
         if(comboBoxDate.getValue() != null){
             String [] arrayDay = comboBoxDate.getValue().split("/");
             day = arrayDay[1] + arrayDay[0];
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b66953a07fbc10df4744aa4d4711ca2c476b637
             sentences.append(new ProcessSentence().listSentence(day, floor));
             
             TotalDataHOSEModel dataModel = new TotalDataHOSEModel(day);
@@ -177,10 +180,15 @@ public class ControllerFLoor extends GenericController implements Initializable 
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+<<<<<<< HEAD
 
             sentences.append(new ProcessSentence().listSentence(day, floor)).toString();
             contentFloor.setText(sentences.toString());
 
+=======
+            sentences.append(new ProcessSentence().listSentence(day, floor)).toString();
+            contentFloor.setText(sentences.toString());
+>>>>>>> 3b66953a07fbc10df4744aa4d4711ca2c476b637
         }
         else {
             contentFloor.setText("Nothing!!!");
