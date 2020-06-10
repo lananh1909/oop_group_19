@@ -1,10 +1,10 @@
 package com.dao_impl;
 
+import com.dao.IGetDataDAO;
+import com.dao.IStockSum;
 import com.modeldatack.StockModel;
 import com.modeldatack.TotalDataHNXModel;
 import com.modeldatack.TotalDataHOSEModel;
-import com.dao.IGetDataDAO;
-import com.dao.IStockSum;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -52,7 +52,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
 //                "VNMID-", "VNX50-"};
         List<TotalDataHOSEModel> modelList = new ArrayList<>();
         for(int i = 0; i < listFile.length; i++){
-            if(!listFile[i].contains("HNX") || !listFile[i].contains("UPCOM")){
+            if(!listFile[i].contains("HNX") && !listFile[i].contains("UPCOM")){
                 String file = "data\\" + date + "2020\\" + listFile[i] + date + ".txt";
                 IGetDataDAO getDataDAO = new GetDataDAO();
                 modelList.add(((GetDataDAO) getDataDAO).getDataToModel(file));
