@@ -1,14 +1,10 @@
 package com.controller;
 
 import com.dao_impl.StockSum;
-<<<<<<< HEAD
+
 import com.modeldatack.StockModel;
 import com.modeldatack.TotalDataHNXModel;
-=======
-import com.modelDataCK.StockModel;
-import com.modelDataCK.TotalDataHNXModel;
-import com.modelDataCK.TotalDataHOSEModel;
->>>>>>> f0bf2a621e3247872b63e46b4e500a1dc8c9a1ef
+import com.modeldatack.TotalDataHOSEModel;
 import com.process.ProcessChartIndex;
 import com.sentences.exchangeOnDay.*;
 import com.sentences.indexOfExChange.HNXmodau;
@@ -168,7 +164,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
         if(comboBoxDate.getValue() != null){
             String [] arrayDay = comboBoxDate.getValue().split("/");
             day = arrayDay[1] + arrayDay[0];
-<<<<<<< HEAD
+
             sentences.append(new ProcessSentence().listSentence(day, floor));
             
             TotalDataHOSEModel dataModel = new TotalDataHOSEModel(day);
@@ -181,10 +177,10 @@ public class ControllerFLoor extends GenericController implements Initializable 
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-=======
+
             sentences.append(new ProcessSentence().listSentence(day, floor)).toString();
             contentFloor.setText(sentences.toString());
->>>>>>> cf4a09c231d731de00f42434432183bb83e323ba
+
         }
         else {
             contentFloor.setText("Nothing!!!");
