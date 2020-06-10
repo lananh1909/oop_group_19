@@ -43,7 +43,7 @@ public class ProcessChartIndex {
             XYChart.Data<String, Double> day7 = new XYChart.Data<>("27", dataModels.get(6).getExchangeValue3());
 
             series.getData().addAll(day1, day2, day3, day4, day5, day6, day7);
-            series.setName("Index HNX Chart");
+            series.setName("Index Chart");
             return series;
         }
     }

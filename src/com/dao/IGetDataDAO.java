@@ -1,11 +1,11 @@
 package com.dao;
 
+import java.io.IOException;
+import java.util.List;
+
 import com.modeldatack.StockModel;
 import com.modeldatack.TotalDataHNXModel;
 import com.modeldatack.TotalDataHOSEModel;
-
-import java.io.IOException;
-import java.util.List;
 
 public interface IGetDataDAO {
 	
