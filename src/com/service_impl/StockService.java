@@ -8,10 +8,7 @@ import com.modeldatack.TotalDataHOSEModel;
 import com.service.IStockService;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class StockService implements IStockService {
 
@@ -80,6 +77,28 @@ public class StockService implements IStockService {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public List<StockModel> getDataAllDayOfStockCode(String code, String floor) {
+
+        List<StockModel> listStockModels = new ArrayList<>();
+        HashMap<String, ArrayList<StockModel>> hashMap = new HashMap<>();
+
+        for(int i = 0; i < day.length; i++){
+            listStockModels = new StockSum().sumListOfExchange(day[i], floor);
+            if (i==0) {
+                for (StockModel stock: listStockModels) {
+                    hashMap.put(stock.getStockCode(), new ArrayList<StockModel>());
+                    hashMap.get(stock.getStockCode()).add(stock);
+                }
+            } else {
+                for (StockModel stock: listStockModels) {
+                    hashMap.get(stock.getStockCode()).add(stock);
+                }
+            }
+        }
+        return hashMap.get(code.toUpperCase());
     }
 
 
