@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,7 +17,7 @@ public class ControllerStockCode extends GenericController implements Initializa
     private ComboBox<String> comboBoxFloor;
 
     @FXML
-    private TextArea code;
+    private TextField code;
 
     @FXML
     private Label contentNotify;
@@ -41,6 +42,7 @@ public class ControllerStockCode extends GenericController implements Initializa
         }
 
         if(floor != null && !stockCode.equals("")){
+
         }
     }
 

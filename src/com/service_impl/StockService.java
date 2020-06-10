@@ -29,11 +29,7 @@ public class StockService implements IStockService {
     @Override
     public List<StockModel> getDataOneDayOfCode(String date, String floor) {
         Set<StockModel> modelSet = new HashSet<>();
-        try {
-            modelSet.addAll(stockSum.sumList(date, floor));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        modelSet.addAll(stockSum.sumListOfExchange(date, floor));
         List<StockModel> lis = new ArrayList<>();
         for(StockModel st : modelSet){
             lis.add(st);
