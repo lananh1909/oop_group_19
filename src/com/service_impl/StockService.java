@@ -23,7 +23,7 @@ public class StockService implements IStockService {
 
     List<TotalDataHNXModel> dataHNXModels = new ArrayList<>();
 
-    private String [] day = {"0106", "0206", "0306", "0406", "0506", "0806", "2105", "2205",
+    private String [] day = {"0106", "0206", "0306", "0406", "0506", "2105", "2205",
     "2505", "2605", "2705", "2805", "2905"};
 
     @Override
