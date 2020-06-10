@@ -20,6 +20,11 @@ import com.sentences.exchangeOnDay.TangVotGiamManh;
 import com.sentences.indexOfExChange.IndexSentenceHNX;
 import com.sentences.indexOfExChange.IndexSentenceHOSE;
 import com.sentences.stockCodeOnDay.CaoNhatThapNhat;
+import com.sentences.stockCodeOnDay.DatMuaDatBan;
+import com.sentences.stockCodeOnDay.GiaBanTot;
+import com.sentences.stockCodeOnDay.GiaMuaTot;
+import com.sentences.stockCodeOnDay.NNMuaBan;
+import com.sentences.stockCodeOnDay.TranSanThamChieu;
 
 public class LanAnhTest {
 	private GetDataDAO getDataDAO = new GetDataDAO();
@@ -97,18 +102,23 @@ public class LanAnhTest {
 		for (StockModel s : stockList) {
 			System.out.println(s.getStockCode() + ":");
 			System.out.println("\t" + new CaoNhatThapNhat(s).createSentence());
+			System.out.println("\t" + new DatMuaDatBan(s).createSentence());
+			System.out.println("\t" + new GiaBanTot(s).createSentence());
+			System.out.println("\t" + new GiaMuaTot(s).createSentence());
+			System.out.println("\t" + new NNMuaBan(s).createSentence());
+			System.out.println("\t" + new TranSanThamChieu(s).createSentence());
 		}
 	}
 	
 	public static void main(String[] args) {
 		LanAnhTest test = new LanAnhTest();
-//		test.stockCodeOnDay("UPCOM", "2605");
-		try {
-			test.exchangeOnDay("UPCOM");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		test.stockCodeOnDay("VN30", "2605");
+//		try {
+//			test.exchangeOnDay("UPCOM");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 //		test.getHashMap("HOSE");
 //		chạy r đó
 //		for (String key: test.hashMap.keySet()) {
