@@ -52,7 +52,6 @@ public class StockService implements IStockService {
             }
 
             List<TotalDataHNXModel> dataHNXModels1 = new ArrayList<>();
-
             for(int j = 0; j < dataHNXModels.size(); j++){
                 if(dataHNXModels.get(j).getNameExchange().equalsIgnoreCase(floor)){
                     dataHNXModels1.add(dataHNXModels.get(j));
