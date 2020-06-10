@@ -21,10 +21,9 @@ public class StockSum extends GetDataDAO implements IStockSum {
 
         List<StockModel> listStock = new ArrayList<>();
 
-
-            IGetDataDAO getDataDAO = new GetDataDAO();
-            String file = "data\\" + date + "2020\\" + floor + "-" + date + ".txt";
-            listStock.addAll(getDataDAO.getDataToList(file));
+        IGetDataDAO getDataDAO = new GetDataDAO();
+        String file = "data\\" + date + "2020\\" + floor + "-" + date + ".txt";
+        listStock.addAll(getDataDAO.getDataToList(file));
 
         return listStock;
     }
