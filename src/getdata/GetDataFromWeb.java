@@ -13,6 +13,7 @@ public abstract class GetDataFromWeb {
 	WebElement index;
 	WebElement table;	
 	FileWriter out = null;
+	WebDriver driver = new ChromeDriver();
 	
 	public GetDataFromWeb (String san, String file) throws IOException {
 		this.san = san;
@@ -21,7 +22,6 @@ public abstract class GetDataFromWeb {
 	}
 	
 	public void getElement () {
-		WebDriver driver = new ChromeDriver();
 		driver.get("http://priceboard1.vcsc.com.vn/vcsc/" + this.san.toLowerCase());
 		
 		this.index = driver.findElement(By.id(this.san + "_index"));

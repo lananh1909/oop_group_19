@@ -68,6 +68,7 @@ public class GetDataHNX extends GetDataFromWeb {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+			driver.close();
 		}
 	}
 }

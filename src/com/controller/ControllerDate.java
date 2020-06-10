@@ -4,7 +4,6 @@ import com.dao_impl.StockSum;
 import com.modeldatack.StockModel;
 import com.sentences.exchangeOnDay.NNmua;
 import com.sentences.stockCodeOnDay.*;
-import com.sun.deploy.xml.XMLable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
