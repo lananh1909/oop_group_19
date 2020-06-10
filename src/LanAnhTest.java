@@ -7,8 +7,18 @@ import com.dao_impl.GetDataDAO;
 import com.modeldatack.GenericTotalModel;
 import com.modeldatack.StockModel;
 import com.modeldatack.TotalDataHNXModel;
+import com.modeldatack.TotalDataHOSEModel;
 import com.process.FormatDate;
+import com.sentences.exchangeOnDay.DiemSang;
+import com.sentences.exchangeOnDay.KhoiLuongGiaoDichLon;
+import com.sentences.exchangeOnDay.MaGiaBanCao;
+import com.sentences.exchangeOnDay.NNBan;
+import com.sentences.exchangeOnDay.NNmua;
+import com.sentences.exchangeOnDay.RoomNNcao;
+import com.sentences.exchangeOnDay.TDGiaCaoNhat;
+import com.sentences.exchangeOnDay.TangVotGiamManh;
 import com.sentences.indexOfExChange.IndexSentenceHNX;
+import com.sentences.indexOfExChange.IndexSentenceHOSE;
 import com.sentences.stockCodeOnDay.CaoNhatThapNhat;
 
 public class LanAnhTest {
@@ -55,30 +65,27 @@ public class LanAnhTest {
 			System.out.println(new FormatDate().formatDate(lst[i]) + ":");
 			String file = "data\\" + lst[i] + "2020\\" + san + "-" + lst[i] + ".txt";
 			List<StockModel> stockList = getDataDAO.getDataToList(file);
+			
 
-//			if (san.contains("HNX") || san.contains("UPCOM")) {
-//				generic = getDataDAO.getDataToHNX(file);
-//				TotalDataHNXModel total = (TotalDataHNXModel) generic;
-//				System.out.println(new IndexSentenceHNX(total).createSentence());
-//				System.out.println(new HNXmodau(total).createSentence());
-//			} else { 
-//				generic = getDataDAO.getDataModel();
-//				TotalDataHOSEModel total1 = (TotalDataHOSEModel) generic;
-//				System.out.println(new IndexSentenceHOSE(total1).createSentence());
-//				System.out.println(new phien1(total1).createSentence());
-//				System.out.println(new phien2(total1).createSentence());
-//				System.out.println(new phien3(total1).createSentence());
-//			}	
+			if (san.contains("HNX") || san.contains("UPCOM")) {
+				generic = getDataDAO.getDataToHNX(file);
+				TotalDataHNXModel total = (TotalDataHNXModel) generic;
+				System.out.println(new IndexSentenceHNX(total).createSentence());
+			} else { 
+				generic = getDataDAO.getDataToModel(file);
+				TotalDataHOSEModel total1 = (TotalDataHOSEModel) generic;
+				System.out.println(new IndexSentenceHOSE(total1).createSentence());
+			}	
 			
-//			System.out.println(new TangVotGiamManh(stockList, generic).createSentence());	
+			System.out.println(new TangVotGiamManh(stockList, generic).createSentence());	
 			
-//			System.out.println(new MaGiaBanCao(stockList).createSentence());
-//			System.out.println(new DiemSang(stockList).createSentence());
-//			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
-//			System.out.println(new NNmua(stockList).createSentence());
-//			System.out.println(new NNBan(stockList).createSentence());
-//			System.out.println(new RoomNNcao(stockList).createSentence());
-//			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
+			System.out.println(new MaGiaBanCao(stockList).createSentence());
+			System.out.println(new DiemSang(stockList).createSentence());
+			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
+			System.out.println(new NNmua(stockList).createSentence());
+			System.out.println(new NNBan(stockList).createSentence());
+			System.out.println(new RoomNNcao(stockList).createSentence());
+			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
 			
 		}
 	}
@@ -97,7 +104,7 @@ public class LanAnhTest {
 		LanAnhTest test = new LanAnhTest();
 //		test.stockCodeOnDay("UPCOM", "2605");
 		try {
-			test.exchangeOnDay("HNX");
+			test.exchangeOnDay("UPCOM");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

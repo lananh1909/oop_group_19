@@ -48,3 +48,4 @@ public class ColorOfExchange extends MaGiaBanCao {
 		}
 	}
 }
+

@@ -52,3 +52,4 @@ public class MaGiaBanCao {
 		return s[m];
 	}
 }
+
