@@ -87,7 +87,7 @@ public class ControllerHome extends GenericController implements Initializable {
         try {
             Parent root1 = (Parent) fxmlLoader2.load();
             Stage stage = new Stage();
-            stage.setTitle("Floor Table");
+            stage.setTitle("Stock code follow day");
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (Exception e) {
