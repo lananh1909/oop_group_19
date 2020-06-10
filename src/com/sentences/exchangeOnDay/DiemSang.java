@@ -29,3 +29,4 @@ public class DiemSang extends MaGiaBanCao{
 				code + ". ";
 	}
 }
+

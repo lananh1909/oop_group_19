@@ -9,6 +9,14 @@ import com.modeldatack.StockModel;
 import com.modeldatack.TotalDataHNXModel;
 import com.modeldatack.TotalDataHOSEModel;
 import com.process.FormatDate;
+import com.sentences.exchangeOnDay.DiemSang;
+import com.sentences.exchangeOnDay.KhoiLuongGiaoDichLon;
+import com.sentences.exchangeOnDay.MaGiaBanCao;
+import com.sentences.exchangeOnDay.NNBan;
+import com.sentences.exchangeOnDay.NNmua;
+import com.sentences.exchangeOnDay.RoomNNcao;
+import com.sentences.exchangeOnDay.TDGiaCaoNhat;
+import com.sentences.exchangeOnDay.TangVotGiamManh;
 import com.sentences.indexOfExChange.IndexSentenceHNX;
 import com.sentences.indexOfExChange.IndexSentenceHOSE;
 import com.sentences.stockCodeOnDay.CaoNhatThapNhat;
@@ -69,15 +77,15 @@ public class LanAnhTest {
 				System.out.println(new IndexSentenceHOSE(total1).createSentence());
 			}	
 			
-//			System.out.println(new TangVotGiamManh(stockList, generic).createSentence());	
+			System.out.println(new TangVotGiamManh(stockList, generic).createSentence());	
 			
-//			System.out.println(new MaGiaBanCao(stockList).createSentence());
-//			System.out.println(new DiemSang(stockList).createSentence());
-//			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
-//			System.out.println(new NNmua(stockList).createSentence());
-//			System.out.println(new NNBan(stockList).createSentence());
-//			System.out.println(new RoomNNcao(stockList).createSentence());
-//			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
+			System.out.println(new MaGiaBanCao(stockList).createSentence());
+			System.out.println(new DiemSang(stockList).createSentence());
+			System.out.println(new KhoiLuongGiaoDichLon(stockList).createSentence());
+			System.out.println(new NNmua(stockList).createSentence());
+			System.out.println(new NNBan(stockList).createSentence());
+			System.out.println(new RoomNNcao(stockList).createSentence());
+			System.out.println(new TDGiaCaoNhat(stockList).createSentence());
 			
 		}
 	}
