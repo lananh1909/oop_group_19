@@ -14,7 +14,7 @@ public class StockSum extends GetDataDAO implements IStockSum {
     //    String[] listFile = {"HNX30-", "HNX-", "HNXCON-", "HNXFIN-", "HNXLCAP-",
 //            "HNXMAN-", "HNXMSCAP-", "HOSE-","VN30-", "VN100-", "VNALL-",
 //            "VNMID-", "VNX50-"};
-    String[] listFile = {"HNX-",  "HNX30-", "HOSE-","VN30-", "UPCOM-"};
+    String[] listFile = {"HNX-",  "HNX30-", "HOSE-","VN30-"};
 
     @Override
     public List<StockModel> sumList(String date) {

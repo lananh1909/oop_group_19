@@ -7,11 +7,14 @@ import com.modeldatack.TotalDataHOSEModel;
 import java.util.List;
 
 public interface IStockService {
-    List<StockModel> getDataOneDayOfCode(String date, String floor);
+    List<StockModel> getDataOneDayOfExchange(String date, String floor);
 
     List<TotalDataHNXModel> getIndexHNXAllDayOfFloor(String floor);
 
     List<TotalDataHOSEModel> getIndexNotHNXAllDayOfFloor(String floor);
 
     List<StockModel> getDataAllDayOfStockCode(String code, String floor);
+
+
+
 }

@@ -30,7 +30,7 @@ public class StockModel implements Serializable {
     private double priceLowHistory;
     private double buyForeign;
     private double sellForeign;
-    private double RoomNN;
+    private double roomNN;
   
     public String getDate() {
 		return date;
@@ -41,11 +41,11 @@ public class StockModel implements Serializable {
 	}
 
 	public double getRoomNN() {
-        return RoomNN;
+        return roomNN;
     }
 
     public void setRoomNN(double roomNN) {
-        RoomNN = roomNN;
+        this.roomNN = roomNN;
     }
 
     public String getStockCode() {

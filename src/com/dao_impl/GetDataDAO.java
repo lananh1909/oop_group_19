@@ -19,12 +19,14 @@ public class GetDataDAO implements IGetDataDAO {
     
     @Override
     public List<StockModel> getDataToList(String file) {
+
         int start = file.indexOf("-") + 1;
         int end = file.indexOf(".");
-        String date = file.substring(start, end);
-        List<StockModel> stockList = new ArrayList<>();
         String line;
+        List<StockModel> stockList = new ArrayList<>();
         IStockMapper stockMapper = null;
+
+        String date = file.substring(start, end);
 
         try {
             bf = new BufferedReader(new FileReader(file));

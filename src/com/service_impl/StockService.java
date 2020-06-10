@@ -14,24 +14,16 @@ public class StockService implements IStockService {
 
     IStockSum stockSum = new StockSum();
 
-    List<StockModel> modelList = new ArrayList<>();
-
     List<TotalDataHOSEModel> dataModels = new ArrayList<>();
 
     List<TotalDataHNXModel> dataHNXModels = new ArrayList<>();
 
     private String [] day = {"0106", "0206", "0306", "0406", "0506", "2105", "2205",
-    "2505", "2605", "2705", "2805", "2905"};
+    "2505", "2605", "2705", "2805", "2905","0906"};
 
     @Override
-    public List<StockModel> getDataOneDayOfCode(String date, String floor) {
-        Set<StockModel> modelSet = new HashSet<>();
-        modelSet.addAll(stockSum.sumListOfExchange(date, floor));
-        List<StockModel> lis = new ArrayList<>();
-        for(StockModel st : modelSet){
-            lis.add(st);
-        }
-        return lis;
+    public List<StockModel> getDataOneDayOfExchange(String date, String floor) {
+        return stockSum.sumListOfExchange(date, floor);
     }
 
 

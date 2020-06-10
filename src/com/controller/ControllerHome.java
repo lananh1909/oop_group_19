@@ -1,6 +1,7 @@
 package com.controller;
 
 import com.modeldatack.StockModel;
+import com.process.FormatNumber;
 import com.service_impl.StockService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -51,7 +52,7 @@ public class ControllerHome extends GenericController implements Initializable {
     private TableColumn<StockModel, Double> nnSellColumn;
 
     @FXML
-    private TableColumn<StockModel, Double> roomColumn;
+    private TableColumn<StockModel, Double> percentColumn;
 
     @FXML
     private ComboBox<String> comboBoxDay;
@@ -61,12 +62,6 @@ public class ControllerHome extends GenericController implements Initializable {
 
     @FXML
     private Label notify;
-
-//    ObservableList<String> listDay = FXCollections.observableArrayList("5/21/2020", "5/22/2020", "5/23/2020",
-//            "5/24/2020", "5/25/2020", "5/26/2020", "5/27/2020");
-
-//    ObservableList<String> list1 = FXCollections.observableArrayList("HNX30", "VN30", "VN100", "VNX50", "HOSE");
-
 
 
     public void handlButoonActionFloor(ActionEvent event) {
@@ -116,13 +111,11 @@ public class ControllerHome extends GenericController implements Initializable {
 
     }
 
-
-
     // lấy ra danh sách observableList các đối tượng stockModel
     public ObservableList<StockModel> getStockModel(String day, String floor){
         ObservableList<StockModel> stockModels = FXCollections.observableArrayList();
         List<StockModel> stockModelList = new ArrayList<>();
-        stockModelList = new StockService().getDataOneDayOfCode(day, floor);
+        stockModelList = new StockService().getDataOneDayOfExchange(day, floor);
         for(StockModel st : stockModelList){
             stockModels.add(st);
         }
@@ -152,10 +145,10 @@ public class ControllerHome extends GenericController implements Initializable {
             floorColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("floor"));
             referenceColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("reference"));
             sumMassColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("sumOrderMatchingMass"));
+            percentColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("percent"));
             priceColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("price"));
             nnBuyColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("buyForeign"));
             nnSellColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("sellForeign"));
-            roomColumn.setCellValueFactory(new PropertyValueFactory<StockModel, Double>("RoomNN"));
 
             stockTable.setItems(getStockModel(date, floor));
         }

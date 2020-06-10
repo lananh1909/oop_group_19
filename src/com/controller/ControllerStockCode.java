@@ -1,8 +1,7 @@
 package com.controller;
 
 import com.modeldatack.StockModel;
-import com.sentences.stockCodeExchangeByDay.*;
-import com.service.IStockService;
+import com.sentences.stock_code_by_day.*;
 import com.service_impl.StockService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -2,10 +2,7 @@ package com.controller;
 
 import com.dao_impl.StockSum;
 import com.modeldatack.StockModel;
-import com.sentences.exchangeOnDay.NNmua;
-import com.sentences.stockCodeOnDay.*;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.sentences.stock_code_on_day.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

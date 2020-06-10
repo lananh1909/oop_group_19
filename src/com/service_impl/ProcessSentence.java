@@ -5,8 +5,8 @@ import com.dao_impl.StockSum;
 import com.modeldatack.TotalDataHNXModel;
 import com.modeldatack.TotalDataHOSEModel;
 
-import com.sentences.indexOfExChange.IndexSentenceHNX;
-import com.sentences.indexOfExChange.IndexSentenceHOSE;
+import com.sentences.index_of_exchange.IndexSentenceHNX;
+import com.sentences.index_of_exchange.IndexSentenceHOSE;
 import com.service.IProcessSentence;
 
 import java.io.IOException;
