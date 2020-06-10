@@ -43,11 +43,6 @@
                   <Insets left="55.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="upcomButton" mnemonicParsing="false" onAction="#SubmitButtonUpcom" text="UPCOM">
-               <HBox.margin>
-                  <Insets left="55.0" />
-               </HBox.margin>
-            </Button>
             <ComboBox fx:id="comboBoxDate" prefHeight="25.0" prefWidth="132.0" promptText="Ngày">
                <HBox.margin>
                   <Insets left="55.0" />

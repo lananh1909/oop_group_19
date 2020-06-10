@@ -38,9 +38,6 @@ public class ControllerFLoor extends GenericController implements Initializable 
     private Button hoseButton;
 
     @FXML
-    private Button upcomButton;
-
-    @FXML
     private ComboBox<String> comboBoxDate;
 
     @FXML
@@ -238,27 +235,6 @@ public class ControllerFLoor extends GenericController implements Initializable 
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else {
-            contentFloor.setText("Nothing!!!");
-        }
-    }
-
-    public void SubmitButtonUpcom(ActionEvent event){
-
-        String floor = upcomButton.getText();
-
-
-        StringBuilder sentences = new StringBuilder();
-        // delete before chart
-        lineChart.getData().clear();
-
-        lineChart.getData().add(new ProcessChartIndex().drawChartIndex(floor));
-        if(comboBoxDate.getValue() != null){
-            String [] arrayDay = comboBoxDate.getValue().split("/");
-            day = arrayDay[1] + arrayDay[0];
-            sentences.append(new ProcessSentence().listSentence(day, floor));
-            contentFloor.setText(sentences.toString());
         }
         else {
             contentFloor.setText("Nothing!!!");
