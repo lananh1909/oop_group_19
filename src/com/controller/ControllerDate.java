@@ -47,7 +47,7 @@ public class ControllerDate extends GenericController implements Initializable {
 
         if(day == null || floor1 == null || codest.equals("")){
             notify.setText("Xin hãy nhập đầy đủ thông tin để hiển thị thông tin chứng khoán!!");
-            contentFollowDay.setText("Nothing!!");
+            contentFollowDay.setText("Thông tin còn thiếu!!");
         }
 
         if(day != null && floor1 != null && !codest.equals("")){
@@ -72,7 +72,7 @@ public class ControllerDate extends GenericController implements Initializable {
 
                 contentFollowDay.setText(stringBuilder.toString());
             } else {
-                contentFollowDay.setText("Mã không hợp lệ!!");
+                contentFollowDay.setText("Mã không tồn tại!!");
             }
         }
 

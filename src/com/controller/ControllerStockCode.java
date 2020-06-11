@@ -43,7 +43,7 @@ public class ControllerStockCode extends GenericController implements Initializa
         if (floor == null && stockCode.equals("")){
             contentNotify.setText("Hãy lựa mã chứng khoán để có được thông tin rõ nhất!");
             StringBuilder stringBuilder = new StringBuilder();
-            contentCode.setText(stringBuilder.append("hello").toString());
+            contentCode.setText(stringBuilder.append("Bạn chưa nhập thông tin!").toString());
         }
 
         if(floor != null && !stockCode.equals("")){

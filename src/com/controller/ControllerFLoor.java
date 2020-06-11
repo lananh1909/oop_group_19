@@ -72,7 +72,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
             }
         }
         else {
-            contentFloor.setText("Nothing!!!");
+            contentFloor.setText("Bạn chưa chọn ngày!");
         }
     }
 
@@ -103,7 +103,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
             }
         }
         else {
-            contentFloor.setText("Nothing!!!");
+            contentFloor.setText("Bạn chưa chọn ngày!");
         }
     }
 
@@ -131,7 +131,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
             }
         }
         else {
-            contentFloor.setText("Nothing!!!");
+            contentFloor.setText("Bạn chưa chọn ngày!");
         }
     }
 
@@ -162,7 +162,7 @@ public class ControllerFLoor extends GenericController implements Initializable 
             }
         }
         else {
-            contentFloor.setText("Nothing!!!");
+            contentFloor.setText("Bạn chưa chọn ngày!");
         }
     }
 
