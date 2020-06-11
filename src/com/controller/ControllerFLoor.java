@@ -46,7 +46,6 @@ public class ControllerFLoor extends GenericController implements Initializable 
 
     public void SubmitButtonHNX(ActionEvent event){
 
-        StringBuilder sentences = new StringBuilder();
         contentFloor.clear();
         String floor = hnxButton.getText();
 
@@ -79,7 +78,6 @@ public class ControllerFLoor extends GenericController implements Initializable 
 
     public void SubmitButtonHnx30(ActionEvent event){
 
-        StringBuilder sentences = new StringBuilder();
         String floor = hnx30Button.getText();
 
         // delete before chart
@@ -111,8 +109,6 @@ public class ControllerFLoor extends GenericController implements Initializable 
 
     public void SubmitButtonVn30(ActionEvent event){
 
-
-        StringBuilder sentences = new StringBuilder();
         String floor = vn30Button.getText();
 
         // delete before chart
@@ -141,8 +137,6 @@ public class ControllerFLoor extends GenericController implements Initializable 
 
     public void SubmitButtonHose(ActionEvent event){
 
-
-        StringBuilder sentences = new StringBuilder();
         contentFloor.clear();
 
         String floor = hoseButton.getText();
