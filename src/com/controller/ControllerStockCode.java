@@ -37,7 +37,7 @@ public class ControllerStockCode extends GenericController implements Initializa
         String stockCode = code.getText();
 
         if(floor != null && stockCode.equals("")){
-            contentCode.setText("Nothing!!");
+            contentCode.setText("Mời nhập mã chứng khoán!");
         }
 
         if (floor == null && stockCode.equals("")){
@@ -69,7 +69,7 @@ public class ControllerStockCode extends GenericController implements Initializa
 
             }
             else {
-                contentCode.setText("nothing!");
+                contentCode.setText("Mã chứng khoán không tồn tại trong sàn này!");
             }
 
         }
