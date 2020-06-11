@@ -9,11 +9,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="455.0" prefWidth="977.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.ControllerFLoor">
+<AnchorPane prefHeight="529.0" prefWidth="1039.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.controller.ControllerFLoor">
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="318.0" text="Thông tin các sàn chứng khoán từ ngày 21/5 tới ngày 30/5" />
-      <TextArea fx:id="contentFloor" layoutY="117.0" prefHeight="351.0" prefWidth="489.0" wrapText="true" />
-      <LineChart fx:id="lineChart" layoutX="489.0" layoutY="144.0" prefHeight="310.0" prefWidth="468.0">
+      <TextArea fx:id="contentFloor" layoutY="117.0" prefHeight="412.0" prefWidth="489.0" wrapText="true" />
+      <LineChart fx:id="lineChart" layoutX="500.0" layoutY="169.0" prefHeight="324.0" prefWidth="539.0">
         <xAxis>
           <CategoryAxis label="day" side="BOTTOM" />
         </xAxis>
@@ -21,29 +21,29 @@
           <NumberAxis label="price" side="LEFT" />
         </yAxis>
       </LineChart>
-      <HBox alignment="CENTER_LEFT" layoutX="17.0" layoutY="41.0" prefHeight="45.0" prefWidth="801.0">
+      <HBox alignment="CENTER_LEFT" layoutX="66.0" layoutY="42.0" prefHeight="45.0" prefWidth="801.0">
          <children>
-            <Button fx:id="hnxButton" mnemonicParsing="false" onAction="#SubmitButtonHNX" text="HNX">
+            <Button fx:id="hnxButton" mnemonicParsing="false" onAction="#SubmitButtonHNX" prefHeight="25.0" prefWidth="69.0" text="HNX">
                <HBox.margin>
                   <Insets left="55.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="hnx30Button" mnemonicParsing="false" onAction="#SubmitButtonHnx30" text="HNX30">
+            <Button fx:id="hnx30Button" mnemonicParsing="false" onAction="#SubmitButtonHnx30" prefHeight="25.0" prefWidth="65.0" text="HNX30">
                <HBox.margin>
                   <Insets left="55.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="hoseButton" mnemonicParsing="false" onAction="#SubmitButtonHose" text="HOSE">
+            <Button fx:id="hoseButton" mnemonicParsing="false" onAction="#SubmitButtonHose" prefHeight="25.0" prefWidth="63.0" text="HOSE">
                <HBox.margin>
                   <Insets left="55.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="vn30Button" mnemonicParsing="false" onAction="#SubmitButtonVn30" text="VN30">
+            <Button fx:id="vn30Button" mnemonicParsing="false" onAction="#SubmitButtonVn30" prefHeight="25.0" prefWidth="65.0" text="VN30">
                <HBox.margin>
                   <Insets left="55.0" />
                </HBox.margin>
             </Button>
-            <ComboBox fx:id="comboBoxDate" prefHeight="25.0" prefWidth="132.0" promptText="Ngày">
+            <ComboBox fx:id="comboBoxDate" prefHeight="25.0" prefWidth="142.0" promptText="Ngày">
                <HBox.margin>
                   <Insets left="55.0" />
                </HBox.margin>
