@@ -15,10 +15,10 @@
       <TextArea fx:id="contentFloor" layoutY="117.0" prefHeight="412.0" prefWidth="489.0" wrapText="true" />
       <LineChart fx:id="lineChart" layoutX="500.0" layoutY="169.0" prefHeight="324.0" prefWidth="539.0">
         <xAxis>
-          <CategoryAxis label="day" side="BOTTOM" />
+          <CategoryAxis label="Day" side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis label="price" side="LEFT" />
+          <NumberAxis label="Value" side="LEFT" />
         </yAxis>
       </LineChart>
       <HBox alignment="CENTER_LEFT" layoutX="66.0" layoutY="42.0" prefHeight="45.0" prefWidth="801.0">

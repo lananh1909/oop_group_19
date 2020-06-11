@@ -74,10 +74,10 @@ public class StockService implements IStockService {
     @Override
     public List<StockModel> getDataAllDayOfStockCode(String code, String floor) {
 
-        List<StockModel> listStockModels = new ArrayList<>();
         HashMap<String, ArrayList<StockModel>> hashMap = new HashMap<>();
 
         for(int i = 0; i < day.length; i++){
+            List<StockModel> listStockModels;
             listStockModels = new StockSum().sumListOfExchange(day[i], floor);
             if (i==0) {
                 for (StockModel stock: listStockModels) {
@@ -86,7 +86,13 @@ public class StockService implements IStockService {
                 }
             } else {
                 for (StockModel stock: listStockModels) {
-                    hashMap.get(stock.getStockCode()).add(stock);
+                    if(hashMap.get(stock.getStockCode()) != null){
+                        hashMap.get(stock.getStockCode()).add(stock);
+                    }
+                    else {
+                        hashMap.put(stock.getStockCode(), new ArrayList<StockModel>());
+                        hashMap.get(stock.getStockCode()).add(stock);
+                    }
                 }
             }
         }
