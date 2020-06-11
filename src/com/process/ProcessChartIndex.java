@@ -34,7 +34,7 @@ public class ProcessChartIndex {
 
 
             series.getData().addAll(day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13);
-            series.setName("Index Chart");
+            series.setName("Value Chart");
             return series;
         }
         else{
@@ -56,7 +56,7 @@ public class ProcessChartIndex {
             XYChart.Data<String, Double> day12 = new XYChart.Data<>("1", dataModels.get(11).getExchangeValue3());
             XYChart.Data<String, Double> day13 = new XYChart.Data<>("2", dataModels.get(12).getExchangeValue3());
             series.getData().addAll(day1, day2, day3, day4, day5, day6, day7, day8, day9, day10, day11, day12, day13);
-            series.setName("Index Chart");
+            series.setName("Value Chart");
             return series;
         }
     }
