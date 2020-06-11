@@ -70,7 +70,9 @@ public class ControllerHome extends GenericController implements Initializable {
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("Floor Table");
-            stage.setScene(new Scene(root1));
+            Scene seScene = new Scene(root1);
+            seScene.getStylesheets().add(getClass().getResource("../view/application.css").toExternalForm());
+            stage.setScene(seScene);
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();
