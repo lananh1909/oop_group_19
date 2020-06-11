@@ -1,7 +1,6 @@
 package com.controller;
 
 import com.modeldatack.StockModel;
-import com.process.FormatNumber;
 import com.service_impl.StockService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
